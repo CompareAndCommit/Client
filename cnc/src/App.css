@@ -260,7 +260,8 @@ footer p {
 
 @media(max-width:810px) {
     .header {
-        padding-bottom: 10vh;
+        padding-top: 10vh;
+        padding-bottom: 5vh;
     }
     .submit {
         padding-bottom: 10vh;
