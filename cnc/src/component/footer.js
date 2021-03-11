@@ -1,5 +1,6 @@
 import React from "react";
 import logoTransparent from '../logoTransparent.svg';
+import "./footer.css"
 
 const Footer = () => (
     <footer>
@@ -20,6 +21,10 @@ const Footer = () => (
       </div>
       <div>
         <p className="footer-p-title">Interests</p>
+        <p>Computer Education</p>
+        <p>Web Server</p>
+        <p>Artificial Intelligence</p>
+        <p>Thinking</p>
       </div>
     </div>
   </footer>

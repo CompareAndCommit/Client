@@ -68,7 +68,6 @@ details,
 embed,
 figure,
 figcaption,
-footer,
 header,
 hgroup,
 menu,
@@ -97,7 +96,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 menu,
@@ -126,7 +124,7 @@ ul {
 
 .header {
     width: 45%;
-    min-width: 400px;
+    min-width: 300px;
     align-self: center;
     padding-bottom: 40vh;
 }
@@ -136,7 +134,7 @@ ul {
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
-    line-height: 80px;
+    line-height: 70px;
     color: #202336;
     mix-blend-mode: normal;
 }
@@ -150,7 +148,7 @@ ul {
     width: 45%;
     align-self: flex-end;
     padding-bottom: 20vh;
-    min-width: 400px;
+    min-width: 300px;
 }
 
 input#me,
@@ -190,9 +188,7 @@ input#submitBtn {
 }
 
 .star {
-    position: absolute;
-    left: -25px;
-    top: -20px;
+    margin-left: -20px;
 }
 
 main {
@@ -207,61 +203,21 @@ hr {
     margin-bottom: 50px;
 }
 
-footer {
-    background-color: #F9F9FB;
-    width: 100%;
-    padding: 4rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-footer p {
-    color: #848484;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
-}
-
-.footer-p-title {
-    font-size: 1.05em;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: black;
-}
-
-#footer-first-div-last-p {
-    margin-top: 2rem;
-}
-
-#footer-logo {
-    width: 4rem;
-}
-
-#footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1100px;
-}
-
-#footer-container div {
-    width: 18%;
-}
-
-#footer-container div:first-child {
-    width: 50%;
-    min-width: 450px;
-}
-
-@media(max-width:810px) {
+@media(max-width:750px) {
+    .simpleLogo {
+        width: 90px;
+        height: 90px;
+    }
     .header {
-        padding-top: 10vh;
+        padding-top: 5vh;
         padding-bottom: 5vh;
+    }
+    div.title {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    div.submitTitle {
+        font-size: 25px;
     }
     .submit {
         padding-bottom: 10vh;
@@ -270,5 +226,9 @@ footer p {
     input#friend,
     input#submitBtn {
         width: 100%;
+        height: 2.4em;
+    }
+    .star {
+        margin-left: 0px;
     }
 }
