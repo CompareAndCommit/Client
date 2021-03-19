@@ -1,32 +1,29 @@
-import logoSimple from './logoSimple.svg';
 import React, { Component } from 'react';
-import Home from "./Home"
-import { myToast } from "./component/swal-toast"
 
 class Commit extends Component {
     state = {
-        myName : "",
-        friendName : ""
+        myName : "nicolas serano",
+        friendName : "Serin-Yoon"
     }
     render() {
         return (
             <main>
-                <div className="header2">
-                    <div className="title">
-                        Compare
-                    </div>
-                </div>
-                <div className="versus">
-                    <div className="me"></div>
-                    <div className="vs">
-                        <div className="v">V</div>
+                <div id="main-container2">
+                    <div className="header2">
+                        <div className="title">
+                            Compare
+                        </div>
+                    <div className="versus">
+                        <span className="me">{this.state.myName}</span>
+                        <div className="vs">
+                            <div className="v">V</div>
                             <div className="s">S</div>
                         </div>
+                        <span className="friend">{this.state.friendName}</span>
                     </div>
-                    <div className="friend"></div>
-                    <div className="Compare">
-                        
                     </div>
+                    <div className="chart"></div>
+                </div>
             </main>
         )
     }
