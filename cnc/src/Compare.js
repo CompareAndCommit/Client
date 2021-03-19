@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-function Compare() {
-    let [myName, changeMyName] = useState('Seojinseojin');
-    let [friendName, changeFriendName] = useState('Serin-Yoon');
+function Compare(props) {
     const [value, onChange] = useState(new Date());
 
     return (
@@ -15,12 +13,12 @@ function Compare() {
                             Compare
                         </div>
                     <div className="versus">
-                        <span className="me">{ myName }</span>
+                        <span className="me">{ props.myName }</span>
                         <div className="vs">
                             <div className="v">V</div>
                             <div className="s">S</div>
                         </div>
-                        <span className="friend">{ friendName }</span>
+                        <span className="friend">{ props.friendName }</span>
                     </div>
                     </div>
                     <div className="subdiv">

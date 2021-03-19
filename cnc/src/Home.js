@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import { myToast } from "./component/swal-toast"
 
 class Home extends Component {
-    state = {
-        myName : "",
-        friendName : ""
-    }
     render() {
         return (
             <main>
@@ -25,21 +21,25 @@ class Home extends Component {
                         <hr width="60rem" color="black" size="1" align="left" />
                         <input type="text" placeholder="Your Name" id="me" onChange={
                             (e) => {
-                                this.setState({myName:e.target.value})
+                                this.props.setMyName(e.target.value)
+                                console.log(this.props)
                             }
                         } />
                         <input type="text" placeholder="Other's Name" id="friend" onChange={
                             (e) => {
-                                this.setState({friendName:e.target.value})
+                                this.props.setFriendName(e.target.value)
+                                console.log(this.props)
                             }
                         }/>
                         <input type="submit" value="Let's Go!" id="submitBtn"  onClick={
                             (e) => {
                                 console.log("letsgo clicked");
-                                if(this.state.myName == this.state.friendName) {
+                                if(this.props.myName === this.props.friendName) {
                                     myToast("warning", "Type different user")
-                                } else if(this.state.myName !== "" && this.state.friendName !== "") {
-                                    console.log(`Let's compare ${this.state.myName} and ${this.state.friendName}`)
+                                } else if(this.props.myName !== "" && this.props.friendName !== "") {
+                                    console.log(`Let's compare ${this.props.myName} and ${this.props.friendName}`)
+                                    this.props.setHome(false)
+                                    this.props.setCompare(true)
                                 } else {
                                     myToast("warning", "Type all usernames")
                                 }
