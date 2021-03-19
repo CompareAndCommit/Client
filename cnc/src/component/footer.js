@@ -22,7 +22,7 @@ const Footer = () => (
       <div>
         <p className="footer-p-title">Interests</p>
         <p>Computer Education</p>
-        <p>Web Server</p>
+        <p>Work Life Balance</p>
         <p>Artificial Intelligence</p>
         <p>Thinking</p>
       </div>

@@ -36,7 +36,9 @@ class Home extends Component {
                         <input type="submit" value="Let's Go!" id="submitBtn"  onClick={
                             (e) => {
                                 console.log("letsgo clicked");
-                                if(this.state.myName !== "" && this.state.friendName !== "") {
+                                if(this.state.myName == this.state.friendName) {
+                                    myToast("warning", "Type different user")
+                                } else if(this.state.myName !== "" && this.state.friendName !== "") {
                                     console.log(`Let's compare ${this.state.myName} and ${this.state.friendName}`)
                                 } else {
                                     myToast("warning", "Type all usernames")
