@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
+import { VictoryChart, VictoryLine } from 'victory';
 import 'react-calendar/dist/Calendar.css';
-import { VictoryChart, VictoryTheme, VictoryArea, VictoryBar, VictoryLine } from 'victory';
+import './Compare.css'
 
 function Compare(props) {
     const [value, onChange] = useState(new Date());
@@ -26,7 +27,7 @@ function Compare(props) {
         <main>
                 <div id="main-container2">
                     <div className="header2">
-                        <div className="title">
+                        <div className="title title2">
                             Compare
                         </div>
                     <div className="versus">

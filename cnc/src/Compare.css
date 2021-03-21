@@ -1,0 +1,133 @@
+#main-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.header2 {
+    width: 90%;
+    align-self: center;
+}
+
+.title2 {
+    margin-top: 20vh;
+}
+
+.me {
+    font-family: Playfair Display;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0em;
+    display: inline-block;
+}
+
+.versus {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 70px;
+    color: #202336;
+    mix-blend-mode: normal;
+    margin-bottom: 10vh;
+}
+
+.vs {
+    display: inline-block;
+    position: relative;
+    height: 70px;
+    width: 115px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.v {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 5px;
+    top: 15px;
+    text-align: center;
+    font-size: 35px;
+    background: #0EB633;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+    line-height: 55px;
+}
+
+.s {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50px;
+    top: 40px;
+    text-align: center;
+    font-size: 35px;
+    background: #0A9829;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+    line-height: 55px;
+}
+
+.friend {
+    display: inline-block;
+    font-family: Playfair Display;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0em;
+}
+
+.calendar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:750px) {
+    .vs,
+    .friend,
+    .me {
+        display: block;
+    }
+    .vs {
+        height: 110px;
+        width: 100%;
+    }
+    .v {
+        left: 41%;
+    }
+    .s {
+        left: auto;
+        right: 41%;
+    }
+    .friend {
+        text-align: right;
+    }
+}
+
+@media(max-width:620px) {
+    .v {
+        left: 39%;
+    }
+    .s {
+        right: 39%;
+    }
+}
+
+@media(max-width:440px) {
+    .v {
+        left: 33%;
+    }
+    .s {
+        right: 33%;
+    }
+}

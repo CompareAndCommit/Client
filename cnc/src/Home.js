@@ -1,6 +1,7 @@
 import logoSimple from './logoSimple.svg';
 import React, { Component } from 'react';
-import { myToast } from "./component/swal-toast"
+import { myToast } from "./component/swal-toast";
+import "./Home.css";
 
 class Home extends Component {
     render() {
