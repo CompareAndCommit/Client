@@ -3,6 +3,7 @@ import Home from "./Home"
 import Compare from "./Compare"
 import './App.css';
 import React, {useState} from "react"
+import * as V from 'victory';
 
 function App() {
   const [viewHome, setHome] = useState(true);
