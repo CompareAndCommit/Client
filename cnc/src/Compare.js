@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { VictoryChart, VictoryLine } from 'victory';
+import swal from 'sweetalert2';
 import 'react-calendar/dist/Calendar.css';
 import './Compare.css'
 
@@ -23,6 +24,21 @@ function Compare(props) {
         {x: "10/29", y: 2},
         {x: "10/30", y: 4}
     ]
+
+    //오늘 날짜 구하기
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let date = today.getDate();
+    let fullDate = '';
+
+    if (month < 10) {
+         fullDate = year + '-0' + month + '-' + date;
+    }
+    else {
+        fullDate = year + '-' + month + '-' + date;
+    }
+
     return (
         <main>
                 <div id="main-container2">
@@ -39,13 +55,24 @@ function Compare(props) {
                         <span className="friend">{ props.friendName }</span>
                     </div>
                     </div>
+                    
                     <div className="subdiv">
+                        <p className="selectment">Select a period</p>
                         <div className="calendar">
-                        <Calendar
-                            onChange = { onChange }
-                            value = { value }
-                        />
+                            <div className="start">
+                                <p>Start Date</p>
+                                <input type="date" name="startdate" value={fullDate} min="2019-01-01" max={fullDate} />
+                            </div>
+                            <div className="end">
+                                <p>End Date</p>
+                                <input type="date" name="enddate" value={fullDate} min="2019-01-01" max={fullDate} />
+                            </div>
+                            {/* <Calendar
+                                onChange = { onChange }
+                                value = { value }
+                            /> */}
                         </div>
+
                         <div className="chart">
                         <VictoryChart
                           animate={{

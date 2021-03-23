@@ -15,7 +15,7 @@
 }
 
 .title2 {
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .me {
@@ -90,7 +90,47 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin: 0.5rem;
 }
+
+.calendar p {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.start, .end {
+    margin: 0.5rem;
+}
+
+.test {
+    text-align: left;
+}
+
+.test p {
+    color: #848484;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.subdiv .selectment {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
 
 @media(max-width:750px) {
     .vs,
