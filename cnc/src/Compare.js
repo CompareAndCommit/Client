@@ -31,12 +31,23 @@ function Compare(props) {
     let month = today.getMonth() + 1;
     let date = today.getDate();
     let fullDate = '';
+    let tmpDate = '';
+    let minDate = '';
 
     if (month < 10) {
          fullDate = year + '-0' + month + '-' + date;
+         minDate = (year - 1) + '-0' + month + '-' + date;
+         if (month == 1) {
+             tmpDate = year + '-12-' + date;
+         }
+         else {
+             tmpDate = year + '-0' + (month - 1) + '-' + date;
+         }
     }
     else {
         fullDate = year + '-' + month + '-' + date;
+        tmpDate = year + '-' + (month - 1) + '-' + date;
+        minDate = (year - 1) + '-' + month + '-' + date;
     }
 
     return (
@@ -55,23 +66,18 @@ function Compare(props) {
                         <span className="friend">{ props.friendName }</span>
                     </div>
                     </div>
+
+                    <div className="selectdate">
+                        <p className="selectment">Select a period</p>
+                        <hr width="60rem" color="black" size="1" align="left" />
+                        
+                        <div className="calendar">
+                            <input type="date" name="enddate" value={fullDate} min={minDate} max={fullDate} />
+                            <input type="date" name="startdate" value={tmpDate} min={minDate} max={fullDate} />
+                        </div>
+                    </div>
                     
                     <div className="subdiv">
-                        <p className="selectment">Select a period</p>
-                        <div className="calendar">
-                            <div className="start">
-                                <p>Start Date</p>
-                                <input type="date" name="startdate" value={fullDate} min="2019-01-01" max={fullDate} />
-                            </div>
-                            <div className="end">
-                                <p>End Date</p>
-                                <input type="date" name="enddate" value={fullDate} min="2019-01-01" max={fullDate} />
-                            </div>
-                            {/* <Calendar
-                                onChange = { onChange }
-                                value = { value }
-                            /> */}
-                        </div>
 
                         <div className="chart">
                         <VictoryChart
@@ -83,8 +89,8 @@ function Compare(props) {
                               {y:0}
                           }
                           domainPadding={{x: [10, -10], y: 20}}
-                          width={800}
-                          height={500}
+                          width={1200}
+                          height={600}
                           >
                             <VictoryLine
                                 style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" } }}

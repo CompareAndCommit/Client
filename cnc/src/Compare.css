@@ -34,7 +34,7 @@
     line-height: 70px;
     color: #202336;
     mix-blend-mode: normal;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .vs {
@@ -86,11 +86,16 @@
 }
 
 .calendar {
-    display: flex;
+    width: 100%;
+    float: right;
+}
+
+.calendar2 {
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 0.5rem;
+    float: right;
 }
 
 .calendar p {
@@ -102,19 +107,29 @@
     font-weight: 300;
 }
 
-.start, .end {
-    margin: 0.5rem;
+.calendar span {
+    margin-right: 0.7rem;
 }
 
-.test {
-    text-align: left;
+.selectdate {
+    width: 50%;
+    align-self: flex-end;
+    padding-right: 10vh;
+    min-width: 300px;
 }
 
-.test p {
-    color: #848484;
+.selectdate .selectment {
+    color: #000;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0.8rem;
     font-size: 1.5rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+.selectdate hr {
+    float: right;
+    margin-bottom: 2rem;
 }
 
 .subdiv .selectment {
@@ -129,7 +144,14 @@
 input {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    margin-left: 0.5em;
+    margin-bottom: 0.5rem;
+    float: right;
+    height: 1.6em;
+    border-radius: 5px;
+    padding: 0.2em 0.5em 0.2em 0.7em;
 }
+
 
 
 @media(max-width:750px) {
