@@ -1,28 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //import Calendar from 'react-calendar';
 import { VictoryChart, VictoryLine } from 'victory';
 //import swal from 'sweetalert2';
-import 'react-calendar/dist/Calendar.css';
+//import 'react-calendar/dist/Calendar.css';
+import axios from "axios"
 import './Compare.css'
 
 function Compare(props) {
-    const data1 = [
-        {x: "10/24", y: 2},
-        {x: "10/25", y: 5},
-        {x: "10/26", y: 4},
-        {x: "10/27", y: 1},
-        {x: "10/28", y: 2},
-        {x: "10/29", y: 3},
-        {x: "10/30", y: 4}
-    ], data2 = [
-        {x: "10/24", y: 3},
-        {x: "10/25", y: 4},
-        {x: "10/26", y: 2},
-        {x: "10/27", y: 3},
-        {x: "10/28", y: 1},
-        {x: "10/29", y: 2},
-        {x: "10/30", y: 4}
-    ]
+    let [myData, onMyDataChange] = useState({data:[
+        {x: "", y: 0},
+    ]})
+    
+    let [frData, onFrDataChange] = useState({data: [
+        {x: "", y: 0},
+    ]})
 
     //오늘 날짜 구하기
     let today = new Date();
@@ -60,6 +51,35 @@ function Compare(props) {
         onTmpDateChange({date:newDate})
     }
 
+    const switchMyDataHandler = (newData) => {
+        onMyDataChange({data:newData})
+    }
+
+    const switchFrDataHandler = (newData) => {
+        onFrDataChange({data:newData})
+    }
+
+    //getCommits(props.myName, props.friendName, fullDate, tmpDate)
+    useEffect(()=>{
+        axios.get(`/compare_commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate.date}&EndDate=${fDate.date}`).then(
+            (response) => {
+                console.log(response)
+                const myDatas = []
+                const frDatas = []
+                const dates = response.data.my_data.date;
+                const mData = response.data.my_data.count;
+                const fData = response.data.other_data.count;
+                for(let i=0;i<dates.length;i++){
+                    myDatas.push({x:dates[i], y:mData[i]})
+                    frDatas.push({x:dates[i], y:fData[i]})
+                }
+                switchMyDataHandler(myDatas)
+                switchFrDataHandler(frDatas)
+            },
+            (error) => {console.log(error)}
+            );
+    }, [fDate, tDate])
+    
     return (
         <main>
                 <div id="main-container2">
@@ -104,12 +124,12 @@ function Compare(props) {
                           >
                             <VictoryLine
                                 style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" } }}
-                                data={data2}
+                                data={myData.data}
                                 interpolation="natural"
                             />
                             <VictoryLine
                                 style={{ data: { stroke: "#2C974B", strokeWidth:5, strokeLinecap:"round" } }}
-                                data={data1}
+                                data={frData.data}
                                 interpolation="natural"
                                 />
                         </VictoryChart>
