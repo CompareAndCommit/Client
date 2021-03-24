@@ -20,18 +20,8 @@ class Home extends Component {
                         </svg>
                         <div className="submitTitle">Input Usernames</div>
                         <hr width="60rem" color="black" size="1" align="left" />
-                        <input type="text" placeholder="Your Name" id="me" onChange={
-                            (e) => {
-                                this.props.setMyName(e.target.value)
-                                console.log(this.props)
-                            }
-                        } />
-                        <input type="text" placeholder="Other's Name" id="friend" onChange={
-                            (e) => {
-                                this.props.setFriendName(e.target.value)
-                                console.log(this.props)
-                            }
-                        }/>
+                        <input type="text" placeholder="Your Name" id="me" onChange={e => {this.props.setMyName(e.target.value)}} />
+                        <input type="text" placeholder="Other's Name" id="friend" onChange={e => {this.props.setFriendName(e.target.value)}}/>
                         <input type="submit" value="Let's Go!" id="submitBtn"  onClick={
                             (e) => {
                                 console.log("letsgo clicked");

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
+//import Calendar from 'react-calendar';
 import { VictoryChart, VictoryLine } from 'victory';
-import swal from 'sweetalert2';
+//import swal from 'sweetalert2';
 import 'react-calendar/dist/Calendar.css';
 import './Compare.css'
 
 function Compare(props) {
-    const [value, onChange] = useState(new Date());
     const data1 = [
         {x: "10/24", y: 2},
         {x: "10/25", y: 5},
@@ -37,7 +36,7 @@ function Compare(props) {
     if (month < 10) {
          fullDate = year + '-0' + month + '-' + date;
          minDate = (year - 1) + '-0' + month + '-' + date;
-         if (month == 1) {
+         if (month === 1) {
              tmpDate = year + '-12-' + date;
          }
          else {
@@ -48,6 +47,17 @@ function Compare(props) {
         fullDate = year + '-' + month + '-' + date;
         tmpDate = year + '-' + (month - 1) + '-' + date;
         minDate = (year - 1) + '-' + month + '-' + date;
+    }
+
+    let [fDate, onFullDateChange] = useState({date:fullDate});
+    let [tDate, onTmpDateChange] = useState({date:tmpDate});
+
+    const switchFullDateHandler = (newDate) => {
+        onFullDateChange({date:newDate})
+    }
+
+    const switchTmpDateHandler = (newDate) => {
+        onTmpDateChange({date:newDate})
     }
 
     return (
@@ -72,8 +82,8 @@ function Compare(props) {
                         <hr width="60rem" color="black" size="1" align="left" />
                         
                         <div className="calendar">
-                            <input type="date" name="enddate" value={fullDate} min={minDate} max={fullDate} />
-                            <input type="date" name="startdate" value={tmpDate} min={minDate} max={fullDate} />
+                            <input type="date" name="enddate" value={fDate.date} min={minDate} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
+                            <input type="date" name="startdate" value={tDate.date} min={minDate} max={fullDate} onChange={ev => switchTmpDateHandler(ev.target.value)} />
                         </div>
                     </div>
                     
