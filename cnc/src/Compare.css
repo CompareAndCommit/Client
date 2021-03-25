@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
 #main-container2 {
     display: flex;
     flex-direction: column;
@@ -154,6 +156,58 @@ input {
     height: 1.6em;
     border-radius: 5px;
     padding: 0.2em 0.5em 0.2em 0.7em;
+}
+
+.userClassify {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-left: 3.5rem;
+    float: left;
+}
+
+.box1, .box2 {
+    width: 10px;
+    height: 10px;
+}
+
+.box1 {
+    background-color: #B9EFC2;
+}
+
+.box2 {
+    background-color: #2C974B;
+}
+
+.user1, .user2 {
+    padding-bottom: 0.5rem;
+}
+
+.rectangle {
+    width: 90%;
+    display: inline-block;
+    margin-top: 4rem;
+    margin-left: 5%;
+    margin-bottom: 4rem;
+    padding-top: 1rem;
+    background: #F4F4F4;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.rectangle div {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 25px;
+    margin-left: 5%;
+    margin-bottom: 3rem;
+}
+
+.days {
+    font-family: inter;
+    font-size: 2rem;
+    padding-left: 4rem;
 }
 
 @media(max-width:750px) {

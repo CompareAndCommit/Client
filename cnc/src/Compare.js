@@ -56,6 +56,7 @@ function Compare(props) {
     /*
     myData는 내 커밋 데이터
     frData는 내 친구 커밋 데이터
+    days는 비교 날짜 일수
     */
     let [myData, onMyDataChange] = useState({data:[
         {x: "", y: 0},
@@ -65,6 +66,11 @@ function Compare(props) {
         {x: "", y: 0},
     ]})
 
+    let [days, onDaysChange] = useState({days: ""})
+
+    let [compareDays, onCompareDaysChange] = useState({days: [
+        {me: "", y: ""},
+    ]})
     /*
     위에 있는 switchTmpDateHandler 친구들과 비슷한 로직이다
     */
@@ -74,6 +80,14 @@ function Compare(props) {
 
     const switchFrDataHandler = (newData) => {
         onFrDataChange({data:newData})
+    }
+
+    const switchDaysHandler = (days) => {
+        onDaysChange({days:days})
+    }
+
+    const switchCompareHandler = (days) => {
+        onCompareDaysChange({days:days})
     }
 
     /*
@@ -99,12 +113,24 @@ function Compare(props) {
                 const dates = response.data.my_data.date;
                 const mData = response.data.my_data.count;
                 const fData = response.data.other_data.count;
+                var myDays = 0; //내가 더 많이 커밋한 날
+                var frDays = 0; //친구가 더 많이 커밋한 날
                 for(let i=0;i<dates.length;i++){
                     myDatas.push({x:dates[i], y:mData[i]})
                     frDatas.push({x:dates[i], y:fData[i]})
                 }
+                for (let i = 0; i < myDatas.length; i++) {
+                    if (myDatas[i].y > frDatas[i].y) {
+                        myDays += 1;
+                    }
+                    else if (myDatas[i].y < frDatas[i].y) {
+                        frDays += 1;
+                    }
+                }
                 switchMyDataHandler(myDatas)
                 switchFrDataHandler(frDatas)
+                switchDaysHandler(myDatas.length);
+                switchCompareHandler({me:myDays, y:frDays});
             },
             (error) => {console.log(error)}
             );
@@ -138,32 +164,54 @@ function Compare(props) {
                     </div>
                     
                     <div className="subdiv">
-
                         <div className="chart">
-                        <VictoryChart
-                          animate={{
-                            duration: 500,
-                            onLoad: { duration: 500 }
-                          }}
-                          minDomain={
-                              {y:0}
-                          }
-                          domainPadding={{x: [10, -10], y: 20}}
-                          width={1200}
-                          height={600}
-                          >
-                            <VictoryLine
-                                style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" } }}
-                                data={myData.data}
-                                interpolation="natural"
-                            />
-                            <VictoryLine
-                                style={{ data: { stroke: "#2C974B", strokeWidth:5, strokeLinecap:"round" } }}
-                                data={frData.data}
-                                interpolation="natural"
+                            <VictoryChart
+                            animate={{
+                                duration: 500,
+                                onLoad: { duration: 500 }
+                            }}
+                            minDomain={
+                                {y:0}
+                            }
+                            domainPadding={{x: [10, -10], y: 20}}
+                            width={1200}
+                            height={600}
+                            >
+                                <VictoryLine
+                                    style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" } }}
+                                    data={myData.data}
+                                    interpolation="natural"
                                 />
-                        </VictoryChart>
+                                <VictoryLine
+                                    style={{ data: { stroke: "#2C974B", strokeWidth:5, strokeLinecap:"round" } }}
+                                    data={frData.data}
+                                    interpolation="natural"
+                                    />
+                            </VictoryChart>
+                            
+                            {/* 그래프 각 색깔이 누구 말하는지 표시
+                            근데 주석 처리 해제해보면 알겠지만 레이아웃 이상해 아직! */}
+                            
+                            {/* <div className="userClassify">
+                                <div className="user1">
+                                        <div className="box1"></div>
+                                        <div>{ props.myName }</div>
+                                </div>
+                                <div className="user2">
+                                    <div className="box2"></div>
+                                    <div>{ props.friendName }</div>
+                                </div>
+                            </div> */}
                         </div>
+                       
+                        <div className="analysis">
+                            <div className="rectangle">
+                                <br />
+                                <div>Days { props.myName } commited more <span className="days">{compareDays.days.me} Days / {days.days} Days</span></div>
+                                <div>Days { props.friendName } commited more <span className="days">{compareDays.days.y} Days / {days.days} Days</span></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </main>
