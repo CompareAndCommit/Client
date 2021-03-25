@@ -3,9 +3,9 @@
 ### How To Start
 
 ```
-cd ./cnc/
+cd cnc
 ```
 
 ```
-yarn start
+npm start
 ```
