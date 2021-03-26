@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 //import Calendar from 'react-calendar';
-import { VictoryChart, VictoryLine } from 'victory';
+import { VictoryChart, VictoryLine, VictoryAxis } from 'victory';
 //import swal from 'sweetalert2';
 //import 'react-calendar/dist/Calendar.css';
 import axios from "axios"
@@ -179,13 +179,25 @@ function Compare(props) {
                             width={1200}
                             height={600}
                             >
+                                <VictoryAxis
+                                    style={{ axis: { stroke: '#1b5c2d' },
+                                    tickLabels: { fontSize: 25, fill: '#1b5c2d'},
+                                    grid: { stroke: '#1b5c2d', strokeWidth: 0.25 }
+                                    }} dependentAxis
+                                />
+                                <VictoryAxis
+                                    style={{ axis: { stroke: '#1b5c2d' },
+                                    ticks: { stroke: '#1b5c2d' },
+                                    }}
+                                    tickFormat={(x)=>''}
+                                />
                                 <VictoryLine
-                                    style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" } }}
+                                    style={{ data: { stroke: "#B9EFC2", strokeWidth:5, strokeLinecap:"round" }}}
                                     data={myData.data}
                                     interpolation="natural"
                                 />
                                 <VictoryLine
-                                    style={{ data: { stroke: "#2C974B", strokeWidth:5, strokeLinecap:"round" } }}
+                                    style={{ data: { stroke: "#2C974B", strokeWidth:5, strokeLinecap:"round" }}}
                                     data={frData.data}
                                     interpolation="natural"
                                     />
