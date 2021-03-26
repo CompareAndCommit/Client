@@ -160,8 +160,8 @@ function Compare(props) {
                         <hr width="60rem" color="black" size="1" align="left" />
                         
                         <div className="calendar">
-                            <input type="date" name="enddate" value={fDate.date} min={minDate} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
-                            <input type="date" name="startdate" value={tDate.date} min={minDate} max={fullDate} onChange={ev => switchTmpDateHandler(ev.target.value)} />
+                            <input type="date" name="startdate" value={tDate.date} min={minDate} max={fDate.date} onChange={ev => switchTmpDateHandler(ev.target.value)} />
+                            <input type="date" name="enddate" value={fDate.date} min={tDate.date} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
                         </div>
                     </div>
                     
@@ -206,8 +206,12 @@ function Compare(props) {
                         <div className="analysis">
                             <div className="rectangle">
                                 <div id="rect-total-title">Total Commits</div>
-                                <div className="rect-total-sub">{myData.total} by {props.myName}</div>
-                                <div className="rect-total-sub">{frData.total} by {props.friendName}</div>
+                                <div className="rect-total-sub">
+                                    <span className="rect-total-num">{myData.total} </span> by {props.myName}
+                                </div>
+                                <div className="rect-total-sub">
+                                    <span className="rect-total-num">{frData.total} </span> by {props.friendName}
+                                </div>
                             </div>
                             <div className="rectangle">
                                 <div className="rect-container">

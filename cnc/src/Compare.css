@@ -83,28 +83,9 @@
 
 .calendar {
     width: 100%;
-    float: right;
-}
-
-.calendar2 {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem;
-    float: right;
-}
-
-.calendar p {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 300;
-}
-
-.calendar span {
-    margin-right: 0.7rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .selectdate {
@@ -234,6 +215,13 @@ input {
 
 .rect-total-sub {
     margin-top: .5rem;
+    font-weight: 100;
+}
+
+.rect-total-num {
+    font-family: inter;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 @media(max-width:750px) {
@@ -279,5 +267,14 @@ input {
     }
     #s {
         right: 33%;
+    }
+    .analysis {
+        justify-content: flex-start;
+    }
+    .selectdate {
+        padding-right: 1rem;
+    }
+    .rectangle {
+        width: 100%;
     }
 }
