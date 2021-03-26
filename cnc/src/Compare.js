@@ -60,11 +60,11 @@ function Compare(props) {
     */
     let [myData, onMyDataChange] = useState({data:[
         {x: "", y: 0},
-    ]})
+    ], total:0})
     
     let [frData, onFrDataChange] = useState({data: [
         {x: "", y: 0},
-    ]})
+    ], total:0})
 
     let [days, onDaysChange] = useState({days: ""})
 
@@ -74,12 +74,12 @@ function Compare(props) {
     /*
     위에 있는 switchTmpDateHandler 친구들과 비슷한 로직이다
     */
-    const switchMyDataHandler = (newData) => {
-        onMyDataChange({data:newData})
+    const switchMyDataHandler = (newData, newTDate) => {
+        onMyDataChange({data:newData, total:newTDate})
     }
 
-    const switchFrDataHandler = (newData) => {
-        onFrDataChange({data:newData})
+    const switchFrDataHandler = (newData, newTDate) => {
+        onFrDataChange({data:newData, total:newTDate})
     }
 
     const switchDaysHandler = (days) => {
@@ -113,13 +113,15 @@ function Compare(props) {
                 const dates = response.data.my_data.date;
                 const mData = response.data.my_data.count;
                 const fData = response.data.other_data.count;
-                var myDays = 0; //내가 더 많이 커밋한 날
-                var frDays = 0; //친구가 더 많이 커밋한 날
+                let mAllCommits = 0;
+                let fAllCommits = 0;
+                let myDays = 0; //내가 더 많이 커밋한 날
+                let frDays = 0; //친구가 더 많이 커밋한 날
                 for(let i=0;i<dates.length;i++){
                     myDatas.push({x:dates[i], y:mData[i]})
                     frDatas.push({x:dates[i], y:fData[i]})
-                }
-                for (let i = 0; i < myDatas.length; i++) {
+                    mAllCommits += mData[i]
+                    fAllCommits += fData[i]
                     if (myDatas[i].y > frDatas[i].y) {
                         myDays += 1;
                     }
@@ -127,8 +129,8 @@ function Compare(props) {
                         frDays += 1;
                     }
                 }
-                switchMyDataHandler(myDatas)
-                switchFrDataHandler(frDatas)
+                switchMyDataHandler(myDatas, mAllCommits)
+                switchFrDataHandler(frDatas, fAllCommits)
                 switchDaysHandler(myDatas.length);
                 switchCompareHandler({me:myDays, y:frDays});
             },
@@ -146,8 +148,8 @@ function Compare(props) {
                     <div className="versus">
                         <span className="me">{ props.myName }</span>
                         <div className="vs">
-                            <div className="v">V</div>
-                            <div className="s">S</div>
+                            <div className="vs-sub" id="v">V</div>
+                            <div className="vs-sub" id="s">S</div>
                         </div>
                         <span className="friend">{ props.friendName }</span>
                     </div>
@@ -202,6 +204,11 @@ function Compare(props) {
                         </div>
                        
                         <div className="analysis">
+                            <div className="rectangle">
+                                <div id="rect-total-title">Total Commits</div>
+                                <div className="rect-total-sub">{myData.total} by {props.myName}</div>
+                                <div className="rect-total-sub">{frData.total} by {props.friendName}</div>
+                            </div>
                             <div className="rectangle">
                                 <div className="rect-container">
                                     <div className="rect-names">{ props.myName } commited more in</div> 
