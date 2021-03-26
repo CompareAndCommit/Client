@@ -189,31 +189,33 @@ function Compare(props) {
                                     />
                             </VictoryChart>
                             
-                            {/* 그래프 각 색깔이 누구 말하는지 표시
-                            근데 주석 처리 해제해보면 알겠지만 레이아웃 이상해 아직! */}
-                            
-                            {/* <div className="userClassify">
-                                <div className="user1">
-                                        <div className="box1"></div>
-                                        <div>{ props.myName }</div>
+                            <div className="userClassify">
+                                <div className="users">
+                                    <div className="box" id="box1"></div>
+                                    <div className="usernames">{ props.myName }</div>
                                 </div>
-                                <div className="user2">
-                                    <div className="box2"></div>
-                                    <div>{ props.friendName }</div>
+                                <div className="users">
+                                    <div className="box" id="box2"></div>
+                                    <div className="usernames">{ props.friendName }</div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                        
                         <div className="analysis">
                             <div className="rectangle">
-                                <br />
-                                <div>Days { props.myName } commited more <span className="days">{compareDays.days.me} Days / {days.days} Days</span></div>
-                                <div>Days { props.friendName } commited more <span className="days">{compareDays.days.y} Days / {days.days} Days</span></div>
+                                <div className="rect-container">
+                                    <div className="rect-names">{ props.myName } commited more in</div> 
+                                    <div className="rect-days">{compareDays.days.me} / {days.days} Days</div>
+                                </div>
+                                <div className="rect-container">
+                                    <div className="rect-names">{ props.friendName } commited more in</div> 
+                                    <div className="rect-days">{compareDays.days.y} / {days.days} Days</div></div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
-                </div>
+            
             </main>
     )
 
