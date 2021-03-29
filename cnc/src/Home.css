@@ -49,8 +49,16 @@ input#submitBtn {
     border: none;
     font-family: 'Inter', sans-serif;
     text-align: center;
-    background-color: #0EB633;
+    background: linear-gradient(145deg, #0EB633, #49da69);
+    box-shadow: 2px 6px 20px #bebebe;
     color: white;
+    transition: .4s all;
+}
+
+input#submitBtn:hover {
+    transform: translate(0, -6px);
+    cursor: pointer;
+    box-shadow: 2px 12px 20px #adadad;
 }
 
 .submitTitle {
