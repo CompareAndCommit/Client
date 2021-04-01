@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      {viewHome? <Home myName={myName} friendName={friendName} setMyName={setMyName} setFriendName={setFriendName} setHome={setHome} setCompare={setCompare} /> : null}
-      {viewCompare? <Compare myName={myName} friendName={friendName} setHome={setHome} setCompare={setCompare}/> : null}
+      {viewHome? <Home myName={myName} friendName={friendName} setMyName={setMyName} setFriendName={setFriendName} viewHome={viewHome} setHome={setHome} setCompare={setCompare} /> : null}
+      {viewCompare? <Compare myName={myName} friendName={friendName} setHome={setHome} viewCompare={viewCompare} setCompare={setCompare}/> : null}
       <Footer/>
     </div>
   );

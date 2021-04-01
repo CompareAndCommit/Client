@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-//import Calendar from 'react-calendar';
 import { VictoryChart, VictoryLine, VictoryAxis } from 'victory';
+import Grow from '@material-ui/core/Grow';
 import { myToast } from "./component/swal-toast";
-//import 'react-calendar/dist/Calendar.css';
 import axios from "axios"
 import './Compare.css'
 
@@ -136,7 +135,7 @@ function Compare(props) {
                         <span className="friend">{ props.friendName }</span>
                     </div>
                     </div>
-
+                    <Grow in={props.viewCompare} style={{transformOrigin: "0 -10 0"}} {...(props.viewCompare? { timeout: 1000 } : {})}>
                     <div className="selectdate">
                         <p className="selectment">Select a period</p>
                         <hr width="60rem" color="black" size="1" align="left" />
@@ -146,7 +145,8 @@ function Compare(props) {
                             <input type="date" name="enddate" value={fDate} min={tDate} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
                         </div>
                     </div>
-                    
+                    </Grow>
+                    <Grow in={props.viewCompare} style={{transformOrigin: "0 0 0"}}>
                     <div className="subdiv">
                         <div className="chart">
                             <VictoryChart
@@ -184,7 +184,6 @@ function Compare(props) {
                                     interpolation="natural"
                                     />
                             </VictoryChart>
-                            
                             <div className="userClassify">
                                 <div className="users">
                                     <div className="box" id="box1"></div>
@@ -218,10 +217,10 @@ function Compare(props) {
                                 </div>
                             </div>
                         </div>
-
+                        </Grow>
                     </div>
             
-            </main>
+                </main>
     )
 
 }

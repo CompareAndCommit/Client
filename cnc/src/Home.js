@@ -1,11 +1,13 @@
 import logoSimple from './logoSimple.svg';
 import React, { Component } from 'react';
+import Fade from "@material-ui/core/Fade";
 import { myToast } from "./component/swal-toast";
 import "./Home.css";
 
 class Home extends Component {
     render() {
         return (
+            <Fade in={this.props.viewHome}>
             <main>
                 <div id="main-container">
                     <div className="header">
@@ -39,6 +41,7 @@ class Home extends Component {
                     </div>
                 </div>
             </main>
+            </Fade>
         )
     }
 }
