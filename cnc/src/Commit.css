@@ -1,0 +1,29 @@
+#title-commit-sub {
+    font-size: 2rem;
+}
+
+#chart-pie,
+#chart-pie-description {
+    display: inline-block;
+}
+
+#chart-pie {
+    width: 60%;
+}
+
+#chart-pie-description {
+    width: 40%;
+}
+
+.chart-lang-box {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .3rem;
+    margin: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.05rem 0.3rem 0.1rem;
+}
+
+.chart-lang-str {
+    display: inline-block;
+}
