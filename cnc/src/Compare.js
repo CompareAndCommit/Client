@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
 //import Calendar from 'react-calendar';
 import { VictoryChart, VictoryLine, VictoryAxis } from 'victory';
-//import swal from 'sweetalert2';
+import { myToast } from "./component/swal-toast";
 //import 'react-calendar/dist/Calendar.css';
 import axios from "axios"
 import './Compare.css'
 
 function Compare(props) {
+
     //오늘 날짜 구하기
+    let minDate = '', fullDate='', tmpDate="";
     let today = new Date();
     let year = today.getFullYear();
     let month = today.getMonth() + 1;
     let date = today.getDate();
-    let fullDate = '';
-    let tmpDate = '';
-    let minDate = '';
 
     if (month < 10) {
-         fullDate = year + '-0' + month + '-' + date;
-         minDate = (year - 1) + '-0' + month + '-' + date;
-         if (month === 1) {
-             tmpDate = year + '-12-' + date;
-         }
-         else {
-             tmpDate = year + '-0' + (month - 1) + '-' + date;
-         }
+        fullDate = year + '-0' + month + '-' + date;
+        minDate = (year - 1) + '-0' + month + '-' + date;
+        if (month === 1) {
+            tmpDate = year + '-12-' + date;
+        }
+        else {
+            tmpDate = year + '-0' + (month - 1) + '-' + date;
+        }
     }
     else {
         fullDate = year + '-' + month + '-' + date;
@@ -32,27 +31,16 @@ function Compare(props) {
         minDate = (year - 1) + '-' + month + '-' + date;
     }
 
-    /*
-    fDate는 끝날짜, tDate는 시작날짜. 
-    위에서 잘 구해놓은 fullDate(오늘)을 fDate로, tmpDate(한달전)을 tDate로 초기화함 
-    구글링 했을 때 많은 분들이 저렇게 객체로 담으셔서 나도 객체로 담았다..
-    fDate.date를 해야 진짜 그 날짜 문자열 값에 접근 가능
-    */
-    let [fDate, onFullDateChange] = useState({date:fullDate});
-    let [tDate, onTmpDateChange] = useState({date:tmpDate});
+    let [fDate, onFullDateChange] = useState(fullDate);
+    let [tDate, onTmpDateChange] = useState(tmpDate);
 
-    /*
-    switchFullDateHandler(새로운날짜) 라고 함수 호출하면 fdate의 date를 바꾸어준다.
-    switchTmpDateHandler도 마찬가지!
-    */
     const switchFullDateHandler = (newDate) => {
-        onFullDateChange({date:newDate})
+        onFullDateChange(newDate)
     }
 
     const switchTmpDateHandler = (newDate) => {
-        onTmpDateChange({date:newDate})
+        onTmpDateChange(newDate)
     }
-
     /*
     myData는 내 커밋 데이터
     frData는 내 친구 커밋 데이터
@@ -66,28 +54,14 @@ function Compare(props) {
         {x: "", y: 0},
     ], total:0})
 
-    let [days, onDaysChange] = useState({days: ""})
-
     let [compareDays, onCompareDaysChange] = useState({days: [
-        {me: "", y: ""},
+        {me: 0, y: 0, total:0},
     ]})
-    /*
-    위에 있는 switchTmpDateHandler 친구들과 비슷한 로직이다
-    */
-    const switchMyDataHandler = (newData, newTDate) => {
-        onMyDataChange({data:newData, total:newTDate})
-    }
 
-    const switchFrDataHandler = (newData, newTDate) => {
-        onFrDataChange({data:newData, total:newTDate})
-    }
-
-    const switchDaysHandler = (days) => {
-        onDaysChange({days:days})
-    }
-
-    const switchCompareHandler = (days) => {
-        onCompareDaysChange({days:days})
+    const switchHandler = (myData, myTotalData, frData, frTotalData, compDays) => {
+        onMyDataChange({data:myData, total:myTotalData})
+        onFrDataChange({data:frData, total:frTotalData})
+        onCompareDaysChange({days:compDays})
     }
 
     /*
@@ -105,38 +79,46 @@ function Compare(props) {
     그게 실행될 때마다, 즉 사용자가 date를 새로 선택할 때마다 위의 함수가 호출된다.
     */
     useEffect(()=>{
-        axios.get(`/compare_commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate.date}&EndDate=${fDate.date}`).then(
-            (response) => {
-                console.log(response)
-                const myDatas = []
-                const frDatas = []
-                const dates = response.data.my_data.date;
-                const mData = response.data.my_data.count;
-                const fData = response.data.other_data.count;
-                let mAllCommits = 0;
-                let fAllCommits = 0;
-                let myDays = 0; //내가 더 많이 커밋한 날
-                let frDays = 0; //친구가 더 많이 커밋한 날
-                for(let i=0;i<dates.length;i++){
-                    myDatas.push({x:dates[i], y:mData[i]})
-                    frDatas.push({x:dates[i], y:fData[i]})
-                    mAllCommits += mData[i]
-                    fAllCommits += fData[i]
-                    if (myDatas[i].y > frDatas[i].y) {
-                        myDays += 1;
+        async function fetchData(){ 
+            axios.get(`/compare_commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate}&EndDate=${fDate}`).then(
+                (response) => {
+                    if(response.data.code === 400) {
+                        myToast("warning", "Invalid Username")
+                        setTimeout(()=>{
+                            props.setCompare(false)
+                            props.setHome(true)
+                        }, 3000)
                     }
-                    else if (myDatas[i].y < frDatas[i].y) {
-                        frDays += 1;
+                    else {
+                        const myDatas = []
+                        const frDatas = []
+                        const dates = response.data.my_data.date;
+                        const mData = response.data.my_data.count;
+                        const fData = response.data.other_data.count;
+                        let mAllCommits = 0;
+                        let fAllCommits = 0;
+                        let myDays = 0; //내가 더 많이 커밋한 날
+                        let frDays = 0; //친구가 더 많이 커밋한 날
+                        for(let i=0;i<dates.length;i++){
+                            myDatas.push({x:dates[i], y:mData[i]})
+                            frDatas.push({x:dates[i], y:fData[i]})
+                            mAllCommits += mData[i]
+                            fAllCommits += fData[i]
+                            if (mData[i] > fData[i]) {
+                                myDays += 1;
+                            }
+                            else if (mData[i] < fData[i]) {
+                                frDays += 1;
+                            }
+                        }
+                        switchHandler(myDatas, mAllCommits, frDatas, fAllCommits, {me:myDays, y:frDays, total:myDatas.length})
                     }
-                }
-                switchMyDataHandler(myDatas, mAllCommits)
-                switchFrDataHandler(frDatas, fAllCommits)
-                switchDaysHandler(myDatas.length);
-                switchCompareHandler({me:myDays, y:frDays});
-            },
-            (error) => {console.log(error)}
+                },
+                (error) => {console.log(error)}
             );
-    }, [fDate, tDate])
+        }
+        fetchData();
+    }, [fDate, tDate, props])
     
     return (
         <main>
@@ -160,8 +142,8 @@ function Compare(props) {
                         <hr width="60rem" color="black" size="1" align="left" />
                         
                         <div className="calendar">
-                            <input type="date" name="startdate" value={tDate.date} min={minDate} max={fDate.date} onChange={ev => switchTmpDateHandler(ev.target.value)} />
-                            <input type="date" name="enddate" value={fDate.date} min={tDate.date} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
+                            <input type="date" name="startdate" value={tDate} min={minDate} max={fDate} onChange={ev => switchTmpDateHandler(ev.target.value)} />
+                            <input type="date" name="enddate" value={fDate} min={tDate} max={fullDate} onChange={ev => switchFullDateHandler(ev.target.value)}/>
                         </div>
                     </div>
                     
@@ -228,11 +210,11 @@ function Compare(props) {
                             <div className="rectangle">
                                 <div className="rect-container">
                                     <div className="rect-names">{ props.myName } commited more in</div> 
-                                    <div className="rect-days">{compareDays.days.me} / {days.days} Days</div>
+                                    <div className="rect-days">{compareDays.days.me} / {compareDays.days.total} Days</div>
                                 </div>
                                 <div className="rect-container">
                                     <div className="rect-names">{ props.friendName } commited more in</div> 
-                                    <div className="rect-days">{compareDays.days.y} / {days.days} Days</div></div>
+                                    <div className="rect-days">{compareDays.days.y} / {compareDays.days.total} Days</div></div>
                                 </div>
                             </div>
                         </div>
