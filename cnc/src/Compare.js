@@ -14,6 +14,9 @@ function Compare(props) {
     let month = today.getMonth() + 1;
     let date = today.getDate();
 
+    date = (date < 10) ? '0'+date : date; // date도 예외처리
+    date = (date > 29) ? 28 : date; 
+
     if (month < 10) {
         fullDate = year + '-0' + month + '-' + date;
         minDate = (year - 1) + '-0' + month + '-' + date;
@@ -29,7 +32,7 @@ function Compare(props) {
         tmpDate = year + '-' + (month - 1) + '-' + date;
         minDate = (year - 1) + '-' + month + '-' + date;
     }
-
+    console.log(fullDate, tmpDate)
     let [fDate, onFullDateChange] = useState(fullDate);
     let [tDate, onTmpDateChange] = useState(tmpDate);
 
@@ -146,7 +149,6 @@ function Compare(props) {
                         </div>
                     </div>
                     </Grow>
-                    {/* <Grow in={props.viewCompare} style={{transformOrigin: "0 0 0"}}> </Grow> */}
 
                     <div className="subdiv">
                         <div className="chart">
@@ -228,6 +230,7 @@ function Compare(props) {
                                     console.log("back to home");
                                     props.setHome(true);
                                     props.setCompare(false);
+                                    window.scrollTo(0, 0)
                                 }
                             }>
                                 <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
@@ -247,6 +250,7 @@ function Compare(props) {
                                     console.log("go to commit");
                                     props.setCompare(false);
                                     props.setCommit(true);
+                                    window.scrollTo(0, 0)
                                 }
                             }
                             >
@@ -266,34 +270,5 @@ function Compare(props) {
     )
 
 }
-
-// class Commit extends Component {
-//     state = {
-//         myName : "nicolas serano",
-//         friendName : "Serin-Yoon"
-//     }
-//     render() {
-//         return (
-//             <main>
-//                 <div id="main-container2">
-//                     <div className="header2">
-//                         <div className="title">
-//                             Compare
-//                         </div>
-//                     <div className="versus">
-//                         <span className="me">{this.state.myName}</span>
-//                         <div className="vs">
-//                             <div className="v">V</div>
-//                             <div className="s">S</div>
-//                         </div>
-//                         <span className="friend">{this.state.friendName}</span>
-//                     </div>
-//                     </div>
-//                     <div className="chart"></div>
-//                 </div>
-//             </main>
-//         )
-//     }
-// }
 
 export default Compare;

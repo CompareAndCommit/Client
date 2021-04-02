@@ -1,5 +1,7 @@
 import React from 'react';
 import { VictoryPie } from 'victory';
+import Slide from '@material-ui/core/Slide';
+import SimpleSlider from "./slider"
 import './Commit.css'
 import './Compare.css'
 
@@ -20,11 +22,12 @@ function Commit(props) {
 
     for(let i=0;i<languageDatas.langs.length; i++){
         let color=languageDatas.colors[i]
-        langDescriptionList.push(<li><div className="chart-lang-box" style={{backgroundColor:color}}></div><div className="chart-lang-str">{languageDatas.langs[i].x}</div></li>)
+        langDescriptionList.push(<li key={i}><div className="chart-lang-box" style={{backgroundColor:color}}></div><div className="chart-lang-str">{languageDatas.langs[i].x}</div></li>)
     }
 
     return (
         <main>
+            <Slide direction="right" in={props.viewCommit}>
             <div id="main-container2">
                 <div className="header2">
                     <div className="title title2">
@@ -48,7 +51,14 @@ function Commit(props) {
                         </div>
                     </div>
                 </div>
+                <div className="subdiv2">
+                    <div className="title-commit-sub">{props.friendName} Commit More</div>
+                    <div className="carousel-container">
+                        <SimpleSlider/>
+                    </div>
+                </div>
             </div>
+            </Slide>
         </main>
     )
 

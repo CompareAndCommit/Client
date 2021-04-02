@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       {viewHome? <Home myName={myName} friendName={friendName} setMyName={setMyName} setFriendName={setFriendName} viewHome={viewHome} setHome={setHome} setCompare={setCompare} setCommit={setCommit} /> : null}
       {viewCompare? <Compare myName={myName} friendName={friendName} setHome={setHome} viewCompare={viewCompare} setCompare={setCompare} setCommit={setCommit}/> : null}
-      {viewCommit? <Commit myName={myName} setHome={setHome} setCompare={setCompare} setCommit={setCommit} viewCommit={viewCommit}/> : null}
+      {viewCommit? <Commit myName={myName} friendName={friendName} setHome={setHome} setCommit={setCommit} viewCommit={viewCommit}/> : null}
       <Footer/>
     </div>
   );

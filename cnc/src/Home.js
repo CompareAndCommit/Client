@@ -33,6 +33,7 @@ class Home extends Component {
                                     console.log(`Let's compare ${this.props.myName} and ${this.props.friendName}`)
                                     this.props.setHome(false)
                                     this.props.setCompare(true)
+                                    window.scrollTo(0, 0)
                                 } else {
                                     myToast("warning", "Type all usernames")
                                 }
