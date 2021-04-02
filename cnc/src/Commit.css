@@ -1,5 +1,6 @@
-#title-commit-sub {
+.title-commit-sub {
     font-size: 2rem;
+    font-family: Playfair Display;
 }
 
 #chart-pie,
@@ -9,6 +10,7 @@
 
 #chart-pie {
     width: 60%;
+    max-width: 500px;
 }
 
 #chart-pie-description {
@@ -26,4 +28,16 @@
 
 .chart-lang-str {
     display: inline-block;
+    font-family: 'Inter', sans-serif;
+}
+
+.subdiv2 {
+    width: 90%;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+#chart-container {
+    display: flex;
+    align-items: center;
 }
