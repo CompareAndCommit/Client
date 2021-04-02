@@ -243,12 +243,17 @@ input {
 }
 
 /* arrow */
+.wrapper {
+    padding-bottom: 3rem;
+}
+
 .wrapper svg {
-    width: 70px;
-    height: auto;
-    margin: 0 2rem;
+    width: 50px;
+    height: 60px;
+    margin: 0 1rem;
     cursor: pointer;
     overflow: visible;
+    vertical-align: middle;
 }
 
 div svg polygon, div svg path {
@@ -266,6 +271,14 @@ div svg:hover .arrow {
 
 div svg:hover .arrow-fixed {
     animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+}
+
+.prevArrow {
+    padding-right: 145px;
+}
+
+.nextArrow {
+    padding-left: 145px;
 }
   
 @keyframes arrow-anim {
@@ -298,15 +311,15 @@ div svg:hover .arrow-fixed {
     color: #000;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: right;
     font-weight: 600;
 }
 
-.prevArrow, .nextArrow {
-    padding-left: 5rem;
-    padding-right: 5rem;
+span.prev, span.next {
+    vertical-align: middle;
 }
+
 
 @media(max-width:750px) {
     .vs,
