@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
-
 #main-container2 {
     display: flex;
     flex-direction: column;
@@ -242,12 +241,22 @@ input {
     font-weight: bold;
 }
 
+
 /* arrow */
+
 .wrapper {
     padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.wrapper svg {
+.arrow-div {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-div svg {
     width: 50px;
     height: 60px;
     margin: 0 1rem;
@@ -256,70 +265,66 @@ input {
     vertical-align: middle;
 }
 
-div svg polygon, div svg path {
+.arrow-div svg polygon,
+.arrow-div svg path {
     transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-div svg:hover polygon, div svg:hover path {
+.arrow-div svg:hover polygon,
+.arrow-div svg:hover path {
     transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
     fill: #2c974a36;
 }
 
-div svg:hover .arrow {
+.arrow-div svg:hover .arrow {
     animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
-div svg:hover .arrow-fixed {
+.arrow-div svg:hover .arrow-fixed {
     animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
-.prevArrow {
-    padding-right: 145px;
-}
-
-.nextArrow {
-    padding-left: 145px;
-}
-  
 @keyframes arrow-anim {
     0% {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
     5% {
-      transform: translateX(-0.1rem);
+        transform: translateX(-0.1rem);
     }
     100% {
-      transform: translateX(1rem);
-      opacity: 0;
+        transform: translateX(1rem);
+        opacity: 0;
     }
 }
 
 @keyframes arrow-fixed-anim {
     5% {
-      opacity: 0;
+        opacity: 0;
     }
     20% {
-      opacity: 0.4;
+        opacity: 0.4;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-} 
+}
 
 .wrapper span {
     color: #000;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 0.8rem;
     font-size: 1.3rem;
     text-align: right;
     font-weight: 600;
 }
 
-span.prev, span.next {
-    vertical-align: middle;
+#prevArrow span {
+    text-align: left;
 }
 
+#nextArrow span {
+    text-align: right;
+}
 
 @media(max-width:750px) {
     .vs,
@@ -355,6 +360,16 @@ span.prev, span.next {
     }
     .rectangle {
         padding: 2rem;
+    }
+}
+
+@media(max-width:540px) {
+    .wrapper span {
+        font-size: 1.05rem;
+    }
+    .arrow-div svg {
+        width: 44px;
+        margin: .3rem;
     }
 }
 
