@@ -9,6 +9,8 @@
     flex-wrap: wrap;
     max-width: 1100px;
     width: 100%;
+    z-index: 100;
+    color: #fff;
 }
 
 .header {
@@ -35,9 +37,22 @@ input#friend {
     padding-left: 20px;
     font-size: 1.2em;
     border-radius: 10px;
-    border: 1px solid #AFB0B9;
+    background-color:rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
     outline: none;
+    border: none;
     font-family: 'Inter', sans-serif;
+    color: #fff;
+    transition: .5s;
+}
+
+input#me:hover, 
+input#me:focus,
+input#friend:hover,
+input#friend:focus {
+    background-color:rgba(255, 255, 255, 0.6);
+    color: #000;
+    backdrop-filter: blur(5px);
 }
 
 input#submitBtn {
@@ -49,16 +64,18 @@ input#submitBtn {
     border: none;
     font-family: 'Inter', sans-serif;
     text-align: center;
-    background: linear-gradient(145deg, #0EB633, #49da69);
-    box-shadow: 2px 6px 20px #bebebe;
+    background: #49da687a;
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 6px 20px #0000002f;
     color: white;
     transition: .4s all;
 }
 
 input#submitBtn:hover {
+    background: #49da688c;
     transform: translate(0, -6px);
     cursor: pointer;
-    box-shadow: 2px 12px 20px #adadad;
+    box-shadow: 2px 12px 20px #0000003d;
 }
 
 .submitTitle {
@@ -77,6 +94,8 @@ hr {
     height: 1px;
     width: 4rem;
     margin-bottom: 50px;
+    background-color: white;
+    border: none; 
 }
 
 @media(max-width:750px) {
