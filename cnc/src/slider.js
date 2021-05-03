@@ -62,6 +62,7 @@ export default class SimpleSlider extends Component {
       ["python", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png"],
       ["ruby", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1024px-Ruby_logo.svg.png"],
       ["dart", "https://assets.stickpng.com/images/5847f289cef1014c0b5e486b.png"],
+      ["c++", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"],
       ["c++", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"]
     ]
     const Elements = elements_data.map((el)=>SimpleSliderElement({name:el[0], src:el[1]}))
