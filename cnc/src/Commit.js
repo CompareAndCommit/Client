@@ -20,19 +20,6 @@ function Commit(props) {
         onLangDataChange(data)
     }
 
-    // const langDatas = {
-    //     colors : ["#3572A5", "#DA5B0B", "#2C3E50", "#F1E05A", "#F18E33" ],
-    //     langs : [
-    //         { x: "Python", y: 45 },
-    //         { x: "Jupyter Notebook", y: 25 },
-    //         { x: "Vue", y: 15 },
-    //         { x: "Javascript", y: 10 },
-    //         { x: "Kotlin", y: 5 }
-    //     ]
-    // }
-
-
-
     const langList = []
 
     for(let i=0;i<langDatas.langs.length; i++){
@@ -43,7 +30,6 @@ function Commit(props) {
 
     useEffect(()=>{
         async function getTopFiveLangData() {
-            console.log(`/top-five-languages?MyName=${props.myName}`);
             axios.get(`/top-five-languages?MyName=${props.myName}`).then(
             
                 (response) => {
@@ -85,7 +71,6 @@ function Commit(props) {
             );
         }
         getTopFiveLangData();
-        console.log('langDatas', langDatas);
     }, [])
 
     return (
@@ -115,9 +100,9 @@ function Commit(props) {
                     </div>
                 </div>
                 <div className="subdiv2">
-                    <div className="title-commit-sub">{props.friendName} Commit More</div>
+                    <div className="title-commit-sub">Languages that {props.friendName} Commit More</div>
                     <div className="carousel-container">
-                        <SimpleSlider/>
+                        <SimpleSlider myName={props.myName} friendName={props.friendName} />
                     </div>
                 </div>
             </div>
