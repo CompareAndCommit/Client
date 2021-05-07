@@ -8,6 +8,8 @@
     flex-wrap: wrap;
     max-width: 1100px;
     width: 100%;
+    z-index: 100;
+    color: white;
 }
 
 .header2 {
@@ -17,6 +19,7 @@
 
 .title2 {
     margin-top: 10vh;
+    color: white!important
 }
 
 .me {
@@ -33,7 +36,7 @@
     font-style: normal;
     font-weight: bold;
     line-height: 70px;
-    color: #202336;
+    color: white;
     mix-blend-mode: normal;
     margin-bottom: 5vh;
 }
@@ -66,14 +69,14 @@
 #v {
     left: 5px;
     top: 15px;
-    background: #0EB633;
+    background: #0eb632b0;
     box-shadow: rgba(0, 0, 0, 0.08) 0 .7rem 1rem .5rem, #0eb6322a 0 .2rem .5rem .2rem;
 }
 
 #s {
     left: 50px;
     top: 40px;
-    background: #0A9829;
+    background: #0a9829b0;
     box-shadow: rgba(0, 0, 0, 0.08) 0 .7rem 1rem .5rem, #0a982923 0 .2rem .5rem .2rem;
 }
 
@@ -101,7 +104,7 @@
 }
 
 .selectdate .selectment {
-    color: #000;
+    color: white;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0.8rem;
     font-size: 1.5rem;
@@ -116,6 +119,11 @@
 
 .subdiv {
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0.3rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
 }
 
 .subdiv .selectment {
@@ -135,7 +143,14 @@ input {
     float: right;
     height: 1.6em;
     border-radius: 5px;
-    padding: 0.2em 0.5em 0.2em 0.7em;
+    padding: 0.3em 0.7em 0.3em 0.9em;
+}
+
+input[type="date"] {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    border: none;
 }
 
 .userClassify {
@@ -192,8 +207,9 @@ input {
     margin: 1rem;
     text-align: center;
     border-radius: 30px;
-    background: linear-gradient(145deg, #F9F9FB, #f0f0f0);
-    box-shadow: 7px 7px 15px #bebebe65;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    box-shadow: 7px 7px 15px #00000034;
     font-family: PT Serif;
     font-weight: bold;
     font-size: 1.2rem;
@@ -202,7 +218,7 @@ input {
 
 .rectangle:hover {
     transform: rotate(-5deg) translate(-10px, -30px);
-    box-shadow: 5px 20px 15px #bebebe70;
+    box-shadow: 5px 20px 15px #00000034;
     z-index: 200;
 }
 
@@ -268,12 +284,13 @@ input {
 .arrow-div svg polygon,
 .arrow-div svg path {
     transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    fill: white;
 }
 
 .arrow-div svg:hover polygon,
 .arrow-div svg:hover path {
     transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
-    fill: #2c974a36;
+    fill: #159e3c93;
 }
 
 .arrow-div svg:hover .arrow {
@@ -316,6 +333,7 @@ input {
     font-size: 1.3rem;
     text-align: right;
     font-weight: 600;
+    color: white;
 }
 
 #prevArrow span {

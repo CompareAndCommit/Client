@@ -81,8 +81,8 @@ function Compare(props) {
     그게 실행될 때마다, 즉 사용자가 date를 새로 선택할 때마다 위의 함수가 호출된다.
     */
     useEffect(()=>{
-        async function fetchData(){ 
-            axios.get(`/compare_commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate}&EndDate=${fDate}`).then(
+        async function fetchData(){
+            axios.get(`/compare-commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate}&EndDate=${fDate}`).then(
                 (response) => {
                     if(response.data.code === 400) {
                         myToast("warning", "Invalid Username")
