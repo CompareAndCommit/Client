@@ -1,0 +1,110 @@
+{
+    "data":[
+        {
+            "name":"TypeScript",
+            "color":"#2b7489",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png"
+        },
+        {
+            "name": "PureBasic",
+            "color": "#5a6986",
+            "src": "https://static.macupdate.com/products/20218/m/purebasic-logo.png?v=1589906404"
+        },
+        {
+            "name":"Objective-C++",
+            "color": "#6866fb",
+            "src": "https://brandslogos.com/wp-content/uploads/images/c-logo-black-and-white.png"
+        },
+        {
+            "name":"Jupyter Notebook",
+            "color": "#DA5B0B",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png"
+        },
+        {
+            "name":"Dart",
+            "color": "#00B4AB",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png"
+        },
+        {
+            "name":"Shell",
+            "color": "#89e051",
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/1024px-Bash_Logo_Colored.svg.png"
+        },
+        {
+            "name":"Nix",
+            "color": "#7e7eff",	
+            "src":"https://nixos.wiki/images/thumb/2/20/Home-nixos-logo.png/x207px-Home-nixos-logo.png.pagespeed.ic.38jujIAhx5.png"
+        },
+        {
+            "name":"Elixir",
+            "color": "#6e4a7e",	
+            "src":"https://secure.meetupstatic.com/photos/event/c/a/2/d/600_452871757.jpeg"
+        },
+        {
+            "name":"Kotlin",
+            "color": "#F18E33",	
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/600px-Kotlin_Icon.svg.png"
+        },
+        {
+            "name":"Crystal",
+            "color": "#776791",	
+            "src":"https://res.cloudinary.com/practicaldev/image/fetch/s--Q_caf-pz--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/14/crystal-logo-2.png"
+        },
+        {
+            "name":"Objective-C",
+            "color": "#438eff",
+            "src":"https://seeklogo.com/images/O/objective-c-logo-81746870EF-seeklogo.com.png"
+        },
+        {
+            "name":"Ruby",
+            "color": "#701516",	
+            "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1024px-Ruby_logo.svg.png"
+        },
+        {
+            "name":"Go",
+            "color": "#375eab",	
+            "src":"https://sdtimes.com/wp-content/uploads/2018/02/golang.sh_-490x490.png"
+        },
+        {
+            "name":"PHP",
+            "color": "#4F5D95",	
+            "src":"https://i.pinimg.com/originals/40/72/d2/4072d2ad5f640ccbe88d9d5b82e2d702.png"
+        },
+        {
+            "name":"Java",
+            "color": "#b07219",
+            "src":"https://i.pinimg.com/originals/f1/ea/a7/f1eaa7278f64e27128e062a3de918265.png"
+        },
+        {
+            "name":"Scala",
+            "color": "#DC322F",	
+            "src":"https://pngimage.net/wp-content/uploads/2018/06/scala-png-1.png"
+        },
+        {
+            "name":"Perl",
+            "color": "#0298c3",	
+            "src":"https://cdn.worldvectorlogo.com/logos/perl-programming-language.svg"
+        },
+        {
+            "name":"Lua",
+            "color": "#000080",	
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png"
+        },
+        {
+            "name":"Vue",
+            "color": "#2c3e50",	
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png"
+        },
+        {
+            "name":"CoffeeScript",
+            "color": "#244776",	
+            "src":"https://cdn.worldvectorlogo.com/logos/coffeescript.svg"
+        },
+        {
+            "name":"HTML",
+            "color": "#e44b23",
+            "src":"https://images.vexels.com/media/users/3/166383/isolated/preview/6024bc5746d7436c727825dc4fc23c22-html-programming-language-icon-by-vexels.png"
+        }
+    ],
+    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC"]
+}
