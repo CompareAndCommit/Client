@@ -104,7 +104,77 @@
             "name":"HTML",
             "color": "#e44b23",
             "src":"https://images.vexels.com/media/users/3/166383/isolated/preview/6024bc5746d7436c727825dc4fc23c22-html-programming-language-icon-by-vexels.png"
-        }
+        },
+        {
+            "name":"OCaml",
+            "color":"#3be133",
+            "src":"https://icons-for-free.com/iconfiles/png/512/vscode+icons+type+ocaml-1324451435855960373.png"
+        },
+        {
+            "name":"Pascal",
+            "color":"#b0ce4e",
+            "src":"https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/d7/24/08/d7240855-0e51-7f7e-6c2d-3bafdea5a05f/source/512x512bb.jpg"
+        },
+        {
+            "name":"F#",
+            "color":"#b845fc",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/5/57/Fsharp_logo.png"
+        },
+        {
+            "name":"Puppet",
+            "color":"#302B6D",
+            "src":"https://orcharhino.com/wp-content/uploads/2020/09/Artboard-1pup.png"
+        },
+        {
+            "name":"JavaScript",
+            "color":"#f1e05a",
+            "src":"https://dottedsquirrel.com/wp-content/uploads/2019/12/1_Dk_c6Kwi4JaIxYDlvE3NfQ.png"
+        },
+        {
+            "name":"R",
+            "color":"#198ce7",
+            "src":"https://download.logo.wine/logo/R_(programming_language)/R_(programming_language)-Logo.wine.png"
+        },
+        {
+            "name":"Erlang",
+            "color":"#B83998",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/0/04/Erlang_logo.svg"
+        },
+        {
+            "name":"Python",
+            "color":"#3572A5",
+            "src":"http://assets.stickpng.com/images/5848152fcef1014c0b5e4967.png"
+        },
+        {
+            "name":"Common Lisp",
+            "color":"#3fb68b",
+            "src":"https://img.icons8.com/color/452/lisp.png"
+        },
+        {
+            "name":"SystemVerilog",
+            "color":"#DAE1C2",
+            "src":"https://eirikpre.gallerycdn.vsassets.io/extensions/eirikpre/systemverilog/0.11.3/1612434073897/Microsoft.VisualStudio.Services.Icons.Default"
+        },
+        {
+            "name":"Groovy",
+            "color":"#e69f56",
+            "src":"https://www.logo.wine/a/logo/Apache_Groovy/Apache_Groovy-Logo.wine.svg"
+        },
+        {
+            "name":"Julia",
+            "color":"#a270ba",
+            "src":"https://julialang.org/assets/infra/profile.png"
+        },
+        {
+            "name":"Haskell",
+            "color":"#29b544",
+            "src":"https://assets.clever-cloud.com/logos/haskell.svg"
+        },
+        {
+            "name":"cpp",
+            "color":"#f34b7d",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
+        }        
     ],
-    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC"]
+    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC", "Fancy", "Shen", "ActionScript", "Diff", "Ragel in Ruby Host", "Fantom", "Zephir", "Click", "Smalltalk", "DM", "loke", "PogoScript", "LiveScript", "VimL", "PureScript", "ABAP", "Matlab", "Slash", "Pan", "LookML", "Eagle", "Scheme", "PLSQL", "Max", "Latte", "XQuery", "Omgrofl", "XC", "Nimrod", "Chapel", "Dylan", "E", "Parrot", "Grammatical Framework", "Game Maker Language", "Papyrus", "NetLinx+ERB", "Clean", "Alloy", "Squirrel", "PAWN", "UnrealScript", "Standard ML", "Slim", "Perl6", "NCL", "Io", "Rouge", "AGS Script", "Dogescript", "nesC",]
 }
