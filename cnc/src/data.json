@@ -32,22 +32,22 @@
         },
         {
             "name":"Nix",
-            "color": "#7e7eff",	
+            "color": "#7e7eff",   
             "src":"https://nixos.wiki/images/thumb/2/20/Home-nixos-logo.png/x207px-Home-nixos-logo.png.pagespeed.ic.38jujIAhx5.png"
         },
         {
             "name":"Elixir",
-            "color": "#6e4a7e",	
+            "color": "#6e4a7e",   
             "src":"https://secure.meetupstatic.com/photos/event/c/a/2/d/600_452871757.jpeg"
         },
         {
             "name":"Kotlin",
-            "color": "#F18E33",	
+            "color": "#F18E33",   
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/600px-Kotlin_Icon.svg.png"
         },
         {
             "name":"Crystal",
-            "color": "#776791",	
+            "color": "#776791",   
             "src":"https://res.cloudinary.com/practicaldev/image/fetch/s--Q_caf-pz--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/14/crystal-logo-2.png"
         },
         {
@@ -57,17 +57,17 @@
         },
         {
             "name":"Ruby",
-            "color": "#701516",	
+            "color": "#701516",   
             "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1024px-Ruby_logo.svg.png"
         },
         {
             "name":"Go",
-            "color": "#375eab",	
+            "color": "#375eab",   
             "src":"https://sdtimes.com/wp-content/uploads/2018/02/golang.sh_-490x490.png"
         },
         {
             "name":"PHP",
-            "color": "#4F5D95",	
+            "color": "#4F5D95",   
             "src":"https://i.pinimg.com/originals/40/72/d2/4072d2ad5f640ccbe88d9d5b82e2d702.png"
         },
         {
@@ -77,27 +77,27 @@
         },
         {
             "name":"Scala",
-            "color": "#DC322F",	
+            "color": "#DC322F",   
             "src":"https://pngimage.net/wp-content/uploads/2018/06/scala-png-1.png"
         },
         {
             "name":"Perl",
-            "color": "#0298c3",	
+            "color": "#0298c3",   
             "src":"https://cdn.worldvectorlogo.com/logos/perl-programming-language.svg"
         },
         {
             "name":"Lua",
-            "color": "#000080",	
+            "color": "#000080",   
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png"
         },
         {
             "name":"Vue",
-            "color": "#2c3e50",	
+            "color": "#2c3e50",   
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png"
         },
         {
             "name":"CoffeeScript",
-            "color": "#244776",	
+            "color": "#244776",   
             "src":"https://cdn.worldvectorlogo.com/logos/coffeescript.svg"
         },
         {
@@ -174,7 +174,52 @@
             "name":"cpp",
             "color":"#f34b7d",
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
-        }        
+        }
+        {
+            "name":"Swift",
+            "color":"#ffac45",
+            "src":"https://brandslogos.com/wp-content/uploads/images/swift-logo-vector.svg"
+        },
+        {
+            "name":"C",
+            "color":"#555555",
+            "src":"https://brandslogos.com/wp-content/uploads/images/swift-logo-vector.svg"
+        },
+        {
+            "name":"Clojure",
+            "color":"#db5855",
+            "src":"https://blog.kakaocdn.net/dn/qoAdw/btqCjRMxkON/bINEkX7tk3mcpoXL79Up7k/img.png"
+        },
+        {
+            "name":"Rust",
+            "color":"#dea584",
+            "src":"https://rust-kr.org/static/logo.svg"
+        },
+        {
+            "name":"Vala",
+            "color":"#fbe5cd",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Vala_Logo.svg/1200px-Vala_Logo.svg.png"
+        },
+        {
+            "name":"C#",
+            "color":"#178600",
+            "src":"https://cdn.imgbin.com/19/5/9/imgbin-c-programming-language-logo-microsoft-visual-studio-net-framework-javascript-icon-x2vvzpHKBmQaYkXV2vQ67GPY7.jpg"
+        },
+        {
+            "name":"CSS",
+            "color":"#563d7c",
+            "src":"https://logodix.com/logo/1111675.png"
+        },
+        {
+            "name":"Emacs Lisp",
+            "color":"#c065db",
+            "src":"https://cdn.imgbin.com/24/5/0/imgbin-emacs-lisp-text-editor-gnu-computer-software-txt-file-iQ0a30SBVsiJFwGsfb7GvZYVk.jpg"
+        },
+        {
+            "name":"TeX",
+            "color":"#3D6117",
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/TeX_logo.svg/1200px-TeX_logo.svg.png"
+        },
     ],
-    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC", "Fancy", "Shen", "ActionScript", "Diff", "Ragel in Ruby Host", "Fantom", "Zephir", "Click", "Smalltalk", "DM", "loke", "PogoScript", "LiveScript", "VimL", "PureScript", "ABAP", "Matlab", "Slash", "Pan", "LookML", "Eagle", "Scheme", "PLSQL", "Max", "Latte", "XQuery", "Omgrofl", "XC", "Nimrod", "Chapel", "Dylan", "E", "Parrot", "Grammatical Framework", "Game Maker Language", "Papyrus", "NetLinx+ERB", "Clean", "Alloy", "Squirrel", "PAWN", "UnrealScript", "Standard ML", "Slim", "Perl6", "NCL", "Io", "Rouge", "AGS Script", "Dogescript", "nesC",]
+    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC", "Fancy", "Shen", "ActionScript", "Diff", "Ragel in Ruby Host", "Fantom", "Zephir", "Click", "Smalltalk", "DM", "Ioke", "PogoScript", "LiveScript", "VimL", "PureScript", "ABAP", "Matlab", "Slash", "Pan", "LookML", "Eagle", "Scheme", "PLSQL", "Max", "Latte", "XQuery", "Omgrofl", "XC", "Nimrod", "Chapel", "Dylan", "E", "Parrot", "Grammatical Framework", "Game Maker Language", "Papyrus", "NetLinx+ERB", "Clean", "Alloy", "Squirrel", "PAWN", "UnrealScript", "Standard ML", "Slim", "Perl6", "NCL", "Io", "Rouge", "AGS Script", "Dogescript", "nesC", "Lex", "API Blueprint", "AutoHotkey", "Isabelle", "Metal", "Clarion", "JSONiq", "Boo", "AutoIt", "Prolog", "SourcePawn", "AMPL", "FORTRAN", "ANTLR", "Harbour", "Tcl", "BlitzMax", "PigLatin", "Lasso", "ECL", "VHDL", "Elm", "Propeller Spin", "X10", "IDL", "ATS", "Ada", "Unity3D Asset", "Nu", "LFE", "SuperCollider", "Oxygene", "ASP", "Assembly", "Gnuplot", "JFlex", "NetLinx", "Turing", "Processing", "Arduino", "FLUX", "NetLogo", "Stan", "SaltStack", "QML", "Pike", "LOLCODE", "ooc", "Handlebars", "J", "Mask", "EmberScript", "Nemerle", "KRL", "Ren'Py", "Unified Parallel C",]
 }
