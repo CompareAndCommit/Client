@@ -6,7 +6,11 @@ import { myToast } from "./component/swal-toast";
 import data from "./data.json";
 
 function SimpleSliderElement(props) {
-  return (<div className="carousel-element"><img className="carousel-img" src={props.src} alt={props.name}/><div className="carousel-div">{props.name}</div></div>)
+  return (
+  <div className="carousel-element" onClick={props.onModalOpen}>
+    <img className="carousel-img" src={props.src} alt={props.name}/>
+    <div className="carousel-div">{props.name}</div>
+  </div>)
 }
 
 function SampleNextArrow(props) {
@@ -41,7 +45,10 @@ export default class SimpleSlider extends Component {
 
     return fetch(`/compare-languages?MyName=${myName}&OtherName=${friendName}`)
     .then(response => response.json())
-    .then(json => json.no_commit_lang)
+    .then(json => {
+      console.log(json)
+      return json
+    })
     .catch(err => {
       console.log(err)
       myToast("warning", "Cannot Get Data")
@@ -54,26 +61,36 @@ export default class SimpleSlider extends Component {
 
   async getUnusedLangData(){
     const datas = await this.callAPI();
+    const lang_datas = datas.no_commit_lang
     const githubData = data.data;
     const excludeData = data.exclude_data;
 
-    for (var i = 0; i < datas.length; i++) {
+    for (var i = 0; i < lang_datas.length; i++) {
 
-      if (excludeData.includes(datas[i])) {
-        datas.splice(i, 1);
+      if (excludeData.includes(lang_datas[i])) {
+        lang_datas.splice(i, 1);
       }
 
       for (var j = 0; j < githubData.length; j++) {
-        if (datas[i] == githubData[j].name) {
-          console.log('Lang >>', datas[i]);
+        if (lang_datas[i] == githubData[j].name) {
+          console.log('Lang >>', lang_datas[i]);
           //console.log('Color >>', githubData[j].color);
           console.log('URL >>', githubData[j].src);
-          datas[i] = [datas[i], githubData[j].src]
-          //datas[i] = [datas[i], githubData[j].color, githubData[j].src]
+          lang_datas[i] = [lang_datas[i], githubData[j].src]
+          //lang_datas[i] = [lang_datas[i], githubData[j].color, githubData[j].src]
         }
       }
     }
-    this.setState(datas);
+    console.log(datas)
+    console.log(lang_datas)
+
+    for (var k=0;k<lang_datas.length;k++) {
+      lang_datas[k].push({id : datas.developer.id[k], name : datas.developer.name[k]})
+      lang_datas[k].push({desc : datas.repository.desc[k], repo : datas.repository.repo[k]})
+    }
+    
+    this.setState(lang_datas);
+    console.log(this.state)
   }
 
   componentDidMount() {
@@ -84,7 +101,10 @@ export default class SimpleSlider extends Component {
     return Object.values(this.state).map((el) => SimpleSliderElement(
       {
         name: el[0],
-        src: el[1]
+        src: el[1],
+        onModalOpen: () => {
+          this.props.openModal(el[0], el[2], el[3])
+        }
       }
       )
     )

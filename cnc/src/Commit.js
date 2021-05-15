@@ -7,6 +7,8 @@ import './Compare.css'
 import axios from 'axios';
 import { myToast } from './component/swal-toast';
 import data from "./data.json";
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 function Commit(props) {
 
@@ -84,11 +86,80 @@ function Commit(props) {
             );
         }
         getTopFiveLangData();
-    }, [])
+    }, [props])
+
+    const handleModalVisibility = (t) => {
+        setOpen(t)
+    }
+
+    const [modalContent, setModalContent] = useState({
+        language: [],
+        repositories : [],
+        developers : []
+    })
+
+    const [open, setOpen] = useState(false);
+
+    const onChangeModalContent = (language, developers, repositories) => {
+        setModalContent({
+            language : language,
+            repositories: repositories,
+            developers: developers
+        })
+        console.log(modalContent)
+    }
+    const onOpenModal = (language, developers, repositories) => {
+        onChangeModalContent(language, developers, repositories)
+        handleModalVisibility(true)
+    }
+
+    const onCloseModal = () => {
+        handleModalVisibility(false)
+    };
 
     return (
         <main>
-            <Slide direction="right" in={props.viewCommit}>
+            {/*<Slide direction="right" in={props.viewCommit}>*/}
+            <Modal open={open} onClose={onCloseModal} center>
+                <h2 id="modal_language_title">{modalContent.language}</h2>
+                    <div class="modal_section_title">Visit Popular Developers</div>
+                    <div class="modal_profiles">
+                        {
+                        modalContent.developers.id ?
+                        modalContent.developers.id.map((i) => {
+                            let img_url = `https://github.com/${i}.png`
+                            let ghb_url = `https://github.com/${i}`
+                            return (<a class="gh_profile_container_a" href={ghb_url}>
+                                        <img class="gh_profile_img_rounded" src={img_url}/>
+                                        <h3 class="gh_profile_h3_username">{i}</h3>
+                                    </a>)
+                        })
+                        : <div></div>
+                        }
+                    </div>
+                    <div class="modal_section_title">Visit Popular Repositories</div>
+                    <table>
+                        <tr>
+                            {
+                                modalContent.repositories.repo ?
+                                modalContent.repositories.repo.map((i) => {
+                                    let repo_name = i.replace("https://github.com/","")
+                                    return (<td><a class="gh_repo_name_a" href={i}>{repo_name}</a></td>)
+                                })
+                                : <div></div>
+                            }
+                        </tr>
+                        <tr>
+                            {
+                                modalContent.repositories.desc ?
+                                modalContent.repositories.desc.map((i) => {
+                                    return (<td>{i}</td>)
+                                })
+                                : <div></div>
+                            }
+                        </tr>
+                    </table>
+            </Modal>
             <div id="main-container2">
                 <div className="header2">
                     <div className="title title2">
@@ -115,11 +186,11 @@ function Commit(props) {
                 <div className="subdiv2">
                     <div className="title-commit-sub">Languages that {props.friendName} Commit More</div>
                     <div className="carousel-container">
-                        <SimpleSlider myName={props.myName} friendName={props.friendName} />
+                        <SimpleSlider myName={props.myName} friendName={props.friendName} openModal={onOpenModal} />
                     </div>
                 </div>
             </div>
-            </Slide>
+            {/*</Slide>*/}
         </main>
     )
 

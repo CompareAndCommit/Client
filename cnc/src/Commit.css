@@ -75,3 +75,58 @@
     margin-bottom: 5vh;
     border-radius: 1.5rem;
 }
+
+.gh_profile_img_rounded {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+}
+
+.gh_profile_container_a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    min-width: 200px;
+}
+
+.gh_profile_h3_username, .gh_repo_name_a {
+    text-decoration: none;
+    color: rgb(0, 80, 0);
+    font-size: 1.3rem;
+    margin-top: .6rem;
+    font-weight: 500;
+}
+
+#modal_language_title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.modal_section_title {
+    color: rgb(3, 36, 3);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+.modal_profiles {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+table {
+    table-layout: fixed;
+    word-break: break-all;
+}
+
+td {
+    width: 25vw;
+    padding: 0.5rem!important
+}
