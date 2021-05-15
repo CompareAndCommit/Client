@@ -1,5 +1,5 @@
 {
-    "data":[
+    "data": [
         {
             "name":"TypeScript",
             "color":"#2b7489",
@@ -174,7 +174,7 @@
             "name":"cpp",
             "color":"#f34b7d",
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
-        }
+        },
         {
             "name":"Swift",
             "color":"#ffac45",
@@ -203,7 +203,7 @@
         {
             "name":"C#",
             "color":"#178600",
-            "src":"https://cdn.imgbin.com/19/5/9/imgbin-c-programming-language-logo-microsoft-visual-studio-net-framework-javascript-icon-x2vvzpHKBmQaYkXV2vQ67GPY7.jpg"
+            "src":"https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png"
         },
         {
             "name":"CSS",
@@ -219,7 +219,20 @@
             "name":"TeX",
             "color":"#3D6117",
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/TeX_logo.svg/1200px-TeX_logo.svg.png"
-        },
+        }
     ],
-    "exclude_data":["Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal","FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury", "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck", "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC", "Fancy", "Shen", "ActionScript", "Diff", "Ragel in Ruby Host", "Fantom", "Zephir", "Click", "Smalltalk", "DM", "Ioke", "PogoScript", "LiveScript", "VimL", "PureScript", "ABAP", "Matlab", "Slash", "Pan", "LookML", "Eagle", "Scheme", "PLSQL", "Max", "Latte", "XQuery", "Omgrofl", "XC", "Nimrod", "Chapel", "Dylan", "E", "Parrot", "Grammatical Framework", "Game Maker Language", "Papyrus", "NetLinx+ERB", "Clean", "Alloy", "Squirrel", "PAWN", "UnrealScript", "Standard ML", "Slim", "Perl6", "NCL", "Io", "Rouge", "AGS Script", "Dogescript", "nesC", "Lex", "API Blueprint", "AutoHotkey", "Isabelle", "Metal", "Clarion", "JSONiq", "Boo", "AutoIt", "Prolog", "SourcePawn", "AMPL", "FORTRAN", "ANTLR", "Harbour", "Tcl", "BlitzMax", "PigLatin", "Lasso", "ECL", "VHDL", "Elm", "Propeller Spin", "X10", "IDL", "ATS", "Ada", "Unity3D Asset", "Nu", "LFE", "SuperCollider", "Oxygene", "ASP", "Assembly", "Gnuplot", "JFlex", "NetLinx", "Turing", "Processing", "Arduino", "FLUX", "NetLogo", "Stan", "SaltStack", "QML", "Pike", "LOLCODE", "ooc", "Handlebars", "J", "Mask", "EmberScript", "Nemerle", "KRL", "Ren'Py", "Unified Parallel C",]
+    "exclude_data": [
+        "Pure Data", "Forth", "Red","Hy","Volt","Haxe", "Factor", "ColdFusion","Glyph","Cirru","Visual Basic .NET","Component Pascal", "EJS", "PowerShell",
+        "FreeMarker","Gosu","ColdFusion CFC","SAS","D","Racket","RAML","Eiffel","xBase","Web Ontology Language","Frege", "Mercury",
+        "NewLisp", "Self", "edn", "Rebol", "AspectJ", "MTML", "Agda", "wisp", "Opal", "Oz", "Mirah", "Objective-J", "Arc", "Brainfuck",
+        "Nit", "APL", "SQF", "MAXScript", "Makefile", "Verilog", "LSL", "eC", "Fancy", "Shen", "ActionScript", "Diff", "Ragel in Ruby Host",
+        "Fantom", "Zephir", "Click", "Smalltalk", "DM", "Ioke", "PogoScript", "LiveScript", "VimL", "PureScript", "ABAP", "Matlab", "Slash",
+        "Pan", "LookML", "Eagle", "Scheme", "PLSQL", "Max", "Latte", "XQuery", "Omgrofl", "XC", "Nimrod", "Chapel", "Dylan", "E", "Parrot",
+        "Grammatical Framework", "Game Maker Language", "Papyrus", "NetLinx+ERB", "Clean", "Alloy", "Squirrel", "PAWN", "UnrealScript",
+        "Standard ML", "Slim", "Perl6", "NCL", "Io", "Rouge", "AGS Script", "Dogescript", "nesC", "Lex", "API Blueprint", "AutoHotkey",
+        "Isabelle", "Metal", "Clarion", "JSONiq", "Boo", "AutoIt", "Prolog", "SourcePawn", "AMPL", "FORTRAN", "ANTLR", "Harbour", "Tcl",
+        "BlitzMax", "PigLatin", "Lasso", "ECL", "VHDL", "Elm", "Propeller Spin", "X10", "IDL", "ATS", "Ada", "Unity3D Asset", "Nu", "LFE",
+        "SuperCollider", "Oxygene", "ASP", "Assembly", "Gnuplot", "JFlex", "NetLinx", "Turing", "Processing", "Arduino", "FLUX", "NetLogo",
+        "Stan", "SaltStack", "QML", "Pike", "LOLCODE", "ooc", "Handlebars", "J", "Mask", "EmberScript", "Nemerle", "KRL", "Ren'Py", "Unified Parallel C"
+    ]
 }

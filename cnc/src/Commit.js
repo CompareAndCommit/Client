@@ -6,6 +6,7 @@ import './Commit.css'
 import './Compare.css'
 import axios from 'axios';
 import { myToast } from './component/swal-toast';
+import data from "./data.json";
 
 function Commit(props) {
 
@@ -30,6 +31,9 @@ function Commit(props) {
 
     useEffect(()=>{
         async function getTopFiveLangData() {
+
+            const githubData = data.data;
+
             axios.get(`/top-five-languages?MyName=${props.myName}`).then(
             
                 (response) => {
@@ -43,11 +47,20 @@ function Commit(props) {
                     else {
                         const topFiveLang = response.data.top_five_langs;
                         const langPercent = response.data.top_five_pct;
+                        const langColors = []
 
                         console.log('Top 5 Lang >>', topFiveLang);
+
+                        for (var i = 0; i < topFiveLang.length; i++) {
+                            for (var j = 0; j < githubData.length; j++) {
+                                if (topFiveLang[i] == githubData[j].name) {
+                                    langColors.push(githubData[j].color);
+                                }
+                            }
+                        }
                         
                         const langData = {
-                            colors : ["#3572A5", "#DA5B0B", "#2C3E50", "#F1E05A", "#F18E33" ],
+                            colors : langColors,
                             langs : [
                                 { x: topFiveLang[0], y: langPercent[0] },
                                 { x: topFiveLang[1], y: langPercent[1] },
