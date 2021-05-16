@@ -122,42 +122,44 @@ function Commit(props) {
             {/*<Slide direction="right" in={props.viewCommit}>*/}
             <Modal open={open} onClose={onCloseModal} center>
                 <h2 id="modal_language_title">{modalContent.language}</h2>
-                    <div class="modal_section_title">Visit Popular Developers</div>
-                    <div class="modal_profiles">
+                    <div className="modal_section_title">Visit Popular Developers</div>
+                    <div className="modal_profiles">
                         {
                         modalContent.developers.id ?
                         modalContent.developers.id.map((i) => {
                             let img_url = `https://github.com/${i}.png`
                             let ghb_url = `https://github.com/${i}`
-                            return (<a class="gh_profile_container_a" href={ghb_url}>
-                                        <img class="gh_profile_img_rounded" src={img_url}/>
-                                        <h3 class="gh_profile_h3_username">{i}</h3>
+                            return (<a className="gh_profile_container_a" href={ghb_url}>
+                                        <img className="gh_profile_img_rounded" src={img_url}/>
+                                        <h3 className="gh_profile_h3_username">{i}</h3>
                                     </a>)
                         })
                         : <div></div>
                         }
                     </div>
-                    <div class="modal_section_title">Visit Popular Repositories</div>
+                    <div className="modal_section_title">Visit Popular Repositories</div>
                     <table>
-                        <tr>
-                            {
-                                modalContent.repositories.repo ?
-                                modalContent.repositories.repo.map((i) => {
-                                    let repo_name = i.replace("https://github.com/","")
-                                    return (<td><a class="gh_repo_name_a" href={i}>{repo_name}</a></td>)
-                                })
-                                : <div></div>
-                            }
-                        </tr>
-                        <tr>
-                            {
-                                modalContent.repositories.desc ?
-                                modalContent.repositories.desc.map((i) => {
-                                    return (<td>{i}</td>)
-                                })
-                                : <div></div>
-                            }
-                        </tr>
+                        <tbody>
+                            <tr>
+                                {
+                                    modalContent.repositories.repo ?
+                                    modalContent.repositories.repo.map((i) => {
+                                        let repo_name = i.replace("https://github.com/","")
+                                        return (<td><a className="gh_repo_name_a" href={i}>{repo_name}</a></td>)
+                                    })
+                                    : <div></div>
+                                }
+                            </tr>
+                            <tr>
+                                {
+                                    modalContent.repositories.desc ?
+                                    modalContent.repositories.desc.map((i) => {
+                                        return (<td>{i}</td>)
+                                    })
+                                    : <div></div>
+                                }
+                            </tr>
+                        </tbody>
                     </table>
             </Modal>
             <div id="main-container2">

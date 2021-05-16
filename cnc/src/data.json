@@ -128,7 +128,7 @@
         {
             "name":"JavaScript",
             "color":"#f1e05a",
-            "src":"https://dottedsquirrel.com/wp-content/uploads/2019/12/1_Dk_c6Kwi4JaIxYDlvE3NfQ.png"
+            "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
         },
         {
             "name":"R",
@@ -178,12 +178,12 @@
         {
             "name":"Swift",
             "color":"#ffac45",
-            "src":"https://brandslogos.com/wp-content/uploads/images/swift-logo-vector.svg"
+            "src":"https://miro.medium.com/max/1138/1*6-G_o5PZSzppyfdLTbFu-A.png"
         },
         {
             "name":"C",
             "color":"#555555",
-            "src":"https://brandslogos.com/wp-content/uploads/images/swift-logo-vector.svg"
+            "src":"https://blog.kakaocdn.net/dn/GuPNi/btqR1Frt6YJ/iffYKS8KIa3k1xkkpqMre1/img.png"
         },
         {
             "name":"Clojure",
@@ -219,6 +219,11 @@
             "name":"TeX",
             "color":"#3D6117",
             "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/TeX_logo.svg/1200px-TeX_logo.svg.png"
+        },
+        {
+            "name":"C++",
+            "color" : "#555555",
+            "src" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
         }
     ],
     "exclude_data": [
