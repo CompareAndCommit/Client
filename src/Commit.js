@@ -120,8 +120,9 @@ function Commit(props) {
     return (
         <main>
             {/*<Slide direction="right" in={props.viewCommit}>*/}
-            <Modal open={open} onClose={onCloseModal} center>
+            <Modal id="full_modal" open={open} onClose={onCloseModal} center>
                 <h2 id="modal_language_title">{modalContent.language}</h2>
+                    <div className="subtitle"> Click and take a look at developers and respositories!</div>
                     <div className="modal_section_title">Visit Popular Developers</div>
                     <div className="modal_profiles">
                         {

@@ -97,21 +97,38 @@
     text-decoration: none;
     color: rgb(0, 80, 0);
     font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: .6rem;
     font-weight: 500;
+    border: 1px;
 }
 
 #modal_language_title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.react-responsive-modal-modal {
+    padding: 2rem 3rem 2rem 3rem !important;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 0.7rem;
 }
 
 .modal_section_title {
     color: rgb(3, 36, 3);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem 0 1rem 0;
 }
 
 .modal_profiles {
@@ -119,14 +136,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: #f0f0f0;
+    border-radius: 1rem;
+    padding: 1rem 0 1rem 0;
 }
 
 table {
     table-layout: fixed;
     word-break: break-all;
+    background-color: #f0f0f0;
+    border-radius: 1rem;
 }
 
 td {
     width: 25vw;
-    padding: 0.5rem!important
+    padding: 0.6rem !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+hr {
+    color: #000;
 }
