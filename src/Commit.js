@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { VictoryPie } from 'victory';
-import Slide from '@material-ui/core/Slide';
 import SimpleSlider from "./slider"
+import MyLoader from "./component/loader"
 import './Commit.css'
 import './Compare.css'
 import axios from 'axios';
@@ -19,6 +19,12 @@ function Commit(props) {
         }
     );
     
+    let [renderCompareReady, onRenderCompareReadyChange] = useState(false)
+
+    const switchRenderReadyHandler = (data) => {
+        onRenderCompareReadyChange(data)
+    }
+
     const switchLangDataHandler = (data) => {
         onLangDataChange(data)
     }
@@ -188,12 +194,17 @@ function Commit(props) {
                 </div>
                 <div className="subdiv2">
                     <div className="title-commit-sub">Languages that {props.friendName} Commit More</div>
+                    {!renderCompareReady ?<MyLoader/>:null}
                     <div className="carousel-container">
-                        <SimpleSlider myName={props.myName} friendName={props.friendName} openModal={onOpenModal} />
+                        <SimpleSlider 
+                            myName={props.myName} 
+                            friendName={props.friendName} 
+                            openModal={onOpenModal} 
+                            compareReady={switchRenderReadyHandler} 
+                        />
                     </div>
                 </div>
             </div>
-            {/*</Slide>*/}
         </main>
     )
 

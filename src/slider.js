@@ -85,18 +85,6 @@ export default class SimpleSlider extends Component {
       } else {
         lang_datas[i] = [lang_datas[i], targetGithubData[0].src]
       }
-
-      /* for문보다 filter, map 함수를 쓰는게 더 일반적이래!
-      for (var j = 0; j < githubData.length; j++) {
-        if (lang_datas[i] == githubData[j].name) {
-          console.log('Lang >>', lang_datas[i]);
-          //console.log('Color >>', githubData[j].color);
-          console.log('URL >>', githubData[j].src);
-          lang_datas[i] = [lang_datas[i], githubData[j].src]
-          //lang_datas[i] = [lang_datas[i], githubData[j].color, githubData[j].src]
-        }
-      }
-      */
     }
     console.log(datas)
     console.log(lang_datas, devl_desc_datas, devl_id_datas, repo_datas, repo_desc_datas)
@@ -107,6 +95,7 @@ export default class SimpleSlider extends Component {
     }
     
     this.setState(lang_datas);
+    this.props.compareReady(true)
     console.log(this.state)
   }
 
