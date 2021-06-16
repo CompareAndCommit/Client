@@ -6,7 +6,6 @@ import axios from "axios"
 import './Compare.css'
 
 function Compare(props) {
-
     //오늘 날짜 구하기
     let minDate = '', fullDate='', tmpDate="";
     let today = new Date();
@@ -66,20 +65,6 @@ function Compare(props) {
         onCompareDaysChange({days:compDays})
     }
 
-    /*
-    useEffect 함수에는 두 개의 인자가 담기는데
-    첫번째 인자는 호출될 함수를
-    두번째 인자는 함수를 호출하는 트리거(?)를 담는다.
-    
-    첫번째 인자로 담긴 함수는 axios로 요청 받아서 열심히 그래프에 데이터를 넣는 부분!!
-    console.log()된 값이나 post맨에서 받은 값으로 어떻게 구성되었는지 볼 수 있다.
-
-    지금 두번째 인자로 [fDate, tDate]가 담겨있는데,
-    위에 state로 정의된
-    fDate가 바뀔 때마다, 혹은 tDate가 바뀔 때마다 위의 함수가 호출된다.
-    아래의 date input하는 부분에서 변화가 생길 때마다 state에 있는 fDate나 tDate를 바꿔줘~ 라고 코드를 짰는데, ( onChange={ev => switchFullDateHandler(ev.target.value)} )
-    그게 실행될 때마다, 즉 사용자가 date를 새로 선택할 때마다 위의 함수가 호출된다.
-    */
     useEffect(()=>{
         async function fetchData(){
             axios.get(`/compare-commits?MyName=${props.myName}&OtherName=${props.friendName}&StartDate=${tDate}&EndDate=${fDate}`).then(

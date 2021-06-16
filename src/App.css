@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 html,
 body,
 div,
@@ -80,14 +80,13 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
 
 /* HTML5 display-role reset for older browsers */
 
@@ -101,56 +100,55 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 .title {
-    font-family: Playfair Display;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 70px;
-    mix-blend-mode: normal;
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 70px;
+  mix-blend-mode: normal;
 }
 
 .simpleLogo {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-#main-background {
-    width: 100%;
-    height: 100vh;
-    background-image: url("./Flat-Mountains.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    z-index: 0;
-    transform: scale(1.1);
+@media (max-width: 750px) {
+  .simpleLogo {
+    width: 90px;
+    height: 90px;
+  }
+  div.title {
+    font-size: 35px;
+    line-height: 50px;
+  }
 }
 
-@media(max-width:750px) {
-    .simpleLogo {
-        width: 90px;
-        height: 90px;
-    }
-    div.title {
-        font-size: 35px;
-        line-height: 50px;
-    }
+label {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+label span {
+  color: transparent;
 }
