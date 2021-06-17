@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { VictoryPie } from 'victory';
-import SimpleSlider from "./slider"
+import SimpleSlider from "./component/slider"
 import MyLoader from "./component/loader"
 import './Commit.css'
 import './Compare.css'
@@ -161,7 +161,7 @@ function Commit(props) {
                                 {
                                     modalContent.repositories.desc ?
                                     modalContent.repositories.desc.map((i) => {
-                                        return (<td>{i}</td>)
+                                        return (<td className="gh_repo_desc">{i}</td>)
                                     })
                                     : <div></div>
                                 }
