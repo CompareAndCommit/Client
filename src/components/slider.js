@@ -50,8 +50,7 @@ export default class SimpleSlider extends Component {
   state = {};
 
   async callAPI() {
-    const myName = this.props.myName;
-    const friendName = this.props.friendName;
+    const { myName, friendName } = this.props;
 
     return fetch(`/compare-languages?MyName=${myName}&OtherName=${friendName}`)
       .then((response) => response.json())
@@ -69,40 +68,49 @@ export default class SimpleSlider extends Component {
   }
 
   async getUnusedLangData() {
-    const datas = await this.callAPI();
-    const lang_datas = datas.no_commit_lang;
-    const devl_id_datas = datas.developer.id;
-    const devl_desc_datas = datas.developer.name;
-    const repo_datas = datas.repository.repo;
-    const repo_desc_datas = datas.repository.desc;
-    const githubData = data.data;
-    const excludeData = data.exclude_data;
+    const remoteData = await this.callAPI();
+    const languageDataArray = remoteData.no_commit_lang;
+    const userIdDataArray = remoteData.developer.id;
+    const userDescriptionArray = remoteData.developer.name;
+    const repositoryDataArray = remoteData.repository.repo;
+    const repositoryDescriptionArray = remoteData.repository.desc;
+    const githubDataArray = data.data;
+    const githubExcludeDataArray = data.exclude_data;
 
-    for (var i = 0; i < lang_datas.length; i++) {
-      const targetGithubData = githubData.filter(
-        (obj) => obj["name"] === lang_datas[i]
+    for (var i = 0; i < languageDataArray.length; i++) {
+      const targetGithubDataJson = githubDataArray.filter(
+        (obj) => obj["name"] === languageDataArray[i]
       );
-      if (!targetGithubData.length || excludeData.includes(lang_datas[i])) {
-        lang_datas.splice(i, 1);
-        devl_id_datas.splice(i, 1);
-        devl_desc_datas.splice(i, 1);
-        repo_datas.splice(i, 1);
-        repo_desc_datas.splice(i, 1);
+      if (
+        !targetGithubDataJson.length ||
+        githubExcludeDataArray.includes(languageDataArray[i])
+      ) {
+        languageDataArray.splice(i, 1);
+        userIdDataArray.splice(i, 1);
+        userDescriptionArray.splice(i, 1);
+        repositoryDataArray.splice(i, 1);
+        repositoryDescriptionArray.splice(i, 1);
         i -= 1;
       } else {
-        lang_datas[i] = [lang_datas[i], targetGithubData[0].src];
+        languageDataArray[i] = [
+          languageDataArray[i],
+          targetGithubDataJson[0].src,
+        ];
       }
     }
 
-    for (var k = 0; k < lang_datas.length; k++) {
-      lang_datas[k].push({
-        id: datas.developer.id[k],
-        name: devl_desc_datas[k],
+    for (var k = 0; k < languageDataArray.length; k++) {
+      languageDataArray[k].push({
+        id: remoteData.developer.id[k],
+        name: userDescriptionArray[k],
       });
-      lang_datas[k].push({ desc: repo_desc_datas[k], repo: repo_datas[k] });
+      languageDataArray[k].push({
+        desc: repositoryDescriptionArray[k],
+        repo: repositoryDataArray[k],
+      });
     }
 
-    this.setState(lang_datas);
+    this.setState(languageDataArray);
     this.props.compareReady(true);
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Switch from "react-switch";
 
-class SwitchExample extends Component {
+class DayNightSwitcher extends Component {
   constructor() {
     super();
     this.state = { checked: false };
@@ -56,4 +56,4 @@ class SwitchExample extends Component {
   }
 }
 
-export default SwitchExample;
+export default DayNightSwitcher;

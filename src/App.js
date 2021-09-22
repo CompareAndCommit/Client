@@ -2,10 +2,10 @@ import Footer from "./components/footer";
 import Home from "./Home";
 import Compare from "./Compare";
 import Commit from "./Commit";
-import Background from "./components/background";
+import Background from "./components/background-image";
 import backgroundSvgDay from "./assets/Flat-Mountains-Day.svg";
 import backgroundSvgNight from "./assets/Flat-Mountains-Night.svg";
-import SwitchExample from "./components/modeSwitch";
+import DayNightSwitcher from "./components/day-night-switcher";
 import "./App.css";
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Background img={isDay ? backgroundSvgDay : backgroundSvgNight} />
-      <SwitchExample setIsDay={setIsDay} />
+      <DayNightSwitcher setIsDay={setIsDay} />
       {viewHome ? (
         <Home
           myName={myName}

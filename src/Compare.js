@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { VictoryChart, VictoryLine, VictoryAxis } from "victory";
 import Grow from "@material-ui/core/Grow";
-import { myToast } from "./component/swal-toast";
+import { myToast } from "./components/swal-toast";
 import axios from "axios";
 import "./Compare.css";
 

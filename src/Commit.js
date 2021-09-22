@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { VictoryPie } from "victory";
-import SimpleSlider from "./component/slider";
-import MyLoader from "./component/loader";
+import SimpleSlider from "./components/slider";
+import MyLoader from "./components/loader";
 import "./Commit.css";
 import "./Compare.css";
 import axios from "axios";
-import { myToast } from "./component/swal-toast";
+import { myToast } from "./components/swal-toast";
 import data from "./data.json";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
@@ -119,7 +119,6 @@ function Commit(props) {
       repositories: repositories,
       developers: developers,
     });
-    console.log(modalContent);
   };
   const onOpenModal = (language, developers, repositories) => {
     onChangeModalContent(language, developers, repositories);

@@ -121,11 +121,6 @@ ul {
   mix-blend-mode: normal;
 }
 
-.simpleLogo {
-  width: 150px;
-  height: 150px;
-}
-
 main {
   min-height: 100vh;
   display: flex;
@@ -133,10 +128,6 @@ main {
 }
 
 @media (max-width: 750px) {
-  .simpleLogo {
-    width: 90px;
-    height: 90px;
-  }
   div.title {
     font-size: 35px;
     line-height: 50px;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import logoTransparentDay from "../assets/logoTransparent-Day.svg";
-import logoTransparentNight from "../assets/logoTransparent-Night.svg";
 import "./footer.css";
+import LogoImage from "./logo-image";
 
 class Footer extends Component {
   render() {
@@ -9,11 +8,7 @@ class Footer extends Component {
       <footer>
         <div id="footer-container">
           <div>
-            <img
-              id="footer-logo"
-              src={this.props.isDay ? logoTransparentDay : logoTransparentNight}
-              alt="CNC Logo"
-            />
+            <LogoImage dimen="4rem" isDay={this.props.isDay} />
             <p>Compare and Commit</p>
             <p>Fill your Commits</p>
             <p>Find Programming Languages for You</p>

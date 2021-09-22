@@ -1,9 +1,8 @@
-import logoSimpleDay from "./assets/logoSimple-Day.svg";
-import logoSimpleNight from "./assets/logoSimple-Night.svg";
 import React, { Component } from "react";
 import Fade from "@material-ui/core/Fade";
 import { myToast } from "./components/swal-toast";
 import "./Home.css";
+import LogoImage from "./components/logo-image";
 
 class Home extends Component {
   render() {
@@ -12,11 +11,7 @@ class Home extends Component {
         <main>
           <div id="main-container">
             <div className="header">
-              <img
-                src={this.props.isDay ? logoSimpleDay : logoSimpleNight}
-                className="simpleLogo"
-                alt="CNC Logo"
-              />
+              <LogoImage dimen="150px" isDay={this.props.isDay} />
               <div className="title">
                 Compare and <br /> Commit
               </div>
