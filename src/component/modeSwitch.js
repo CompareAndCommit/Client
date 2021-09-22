@@ -17,44 +17,43 @@ class SwitchExample extends Component {
     return (
       <label>
         <span>Switch with default style</span>
-        <Switch 
-            onChange={this.handleChange} 
-            checked={this.state.checked} 
-            offColor="#000"
-            onColor="skyblue"
-            checkedIcon={
-                <div
-                    style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: 20,
-                    paddingRight: 2
-                    }}
-                >
-                    ☀️
-                </div>
-            }
-            uncheckedIcon={
-                <div
-                    style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: 20,
-                    paddingRight: 2
-                    }}
-                >
-                    ⭐
-                </div>
-            }
-            
+        <Switch
+          onChange={this.handleChange}
+          checked={this.state.checked}
+          offColor="#000"
+          onColor="skyblue"
+          checkedIcon={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+                fontSize: 20,
+                paddingRight: 2,
+              }}
+            >
+              ☀️
+            </div>
+          }
+          uncheckedIcon={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+                fontSize: 20,
+                paddingRight: 2,
+              }}
+            >
+              ⭐
+            </div>
+          }
         />
       </label>
     );
   }
 }
 
-export default SwitchExample
+export default SwitchExample;

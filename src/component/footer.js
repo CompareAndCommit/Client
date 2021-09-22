@@ -1,19 +1,25 @@
 import React, { Component } from "react";
-import logoTransparentDay from '../vectors/logoTransparent-Day.svg';
+import logoTransparentDay from "../vectors/logoTransparent-Day.svg";
 import logoTransparentNight from "../vectors/logoTransparent-Night.svg";
-import "./footer.css"
+import "./footer.css";
 
 class Footer extends Component {
-    render() {
-      return(
+  render() {
+    return (
       <footer>
         <div id="footer-container">
           <div>
-            <img id="footer-logo" src={this.props.isDay? logoTransparentDay : logoTransparentNight } alt="CNC Logo"/>
+            <img
+              id="footer-logo"
+              src={this.props.isDay ? logoTransparentDay : logoTransparentNight}
+              alt="CNC Logo"
+            />
             <p>Compare and Commit</p>
             <p>Fill your Commits</p>
             <p>Find Programming Languages for You</p>
-            <p id="footer-first-div-last-p">©2021 SKKU COMEDU CMD CNC. All rights reserved</p>
+            <p id="footer-first-div-last-p">
+              ©2021 SKKU COMEDU CMD CNC. All rights reserved
+            </p>
           </div>
           <div>
             <p className="footer-p-title">Contributors</p>
@@ -31,8 +37,8 @@ class Footer extends Component {
           </div>
         </div>
       </footer>
-      )
-    }
+    );
+  }
 }
 
 export default Footer;
