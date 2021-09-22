@@ -15,8 +15,14 @@ class DayNightSwitcher extends Component {
 
   render() {
     return (
-      <label>
-        <span>Switch with default style</span>
+      <div
+        style={{
+          position: "fixed",
+          zIndex: "1000",
+          right: "1.5rem",
+          top: "1.5rem",
+        }}
+      >
         <Switch
           onChange={this.handleChange}
           checked={this.state.checked}
@@ -51,7 +57,7 @@ class DayNightSwitcher extends Component {
             </div>
           }
         />
-      </label>
+      </div>
     );
   }
 }

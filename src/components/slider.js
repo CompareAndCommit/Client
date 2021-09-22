@@ -69,6 +69,7 @@ export default class SimpleSlider extends Component {
 
   async getUnusedLangData() {
     const remoteData = await this.callAPI();
+    console.log(remoteData);
     const languageDataArray = remoteData.no_commit_lang;
     const userIdDataArray = remoteData.developer.id;
     const userDescriptionArray = remoteData.developer.name;
@@ -77,7 +78,7 @@ export default class SimpleSlider extends Component {
     const githubDataArray = data.data;
     const githubExcludeDataArray = data.exclude_data;
 
-    for (var i = 0; i < languageDataArray.length; i++) {
+    for (let i = 0; i < languageDataArray.length; i++) {
       const targetGithubDataJson = githubDataArray.filter(
         (obj) => obj["name"] === languageDataArray[i]
       );
@@ -99,7 +100,7 @@ export default class SimpleSlider extends Component {
       }
     }
 
-    for (var k = 0; k < languageDataArray.length; k++) {
+    for (let k = 0; k < languageDataArray.length; k++) {
       languageDataArray[k].push({
         id: remoteData.developer.id[k],
         name: userDescriptionArray[k],

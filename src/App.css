@@ -133,13 +133,3 @@ main {
     line-height: 50px;
   }
 }
-
-label {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-}
-
-label span {
-  color: transparent;
-}

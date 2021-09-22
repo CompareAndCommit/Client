@@ -57,8 +57,8 @@ function Commit(props) {
             const langPercent = response.data.top_five_pct;
             const langColors = [];
 
-            for (var i = 0; i < topFiveLang.length; i++) {
-              for (var j = 0; j < githubData.length; j++) {
+            for (let i = 0; i < topFiveLang.length; i++) {
+              for (let j = 0; j < githubData.length; j++) {
                 if (topFiveLang[i] === githubData[j].name) {
                   langColors.push(githubData[j].color);
                 }
@@ -142,8 +142,8 @@ function Commit(props) {
         <div className="modal_profiles">
           {modalContent.developers.id ? (
             modalContent.developers.id.map((i) => {
-              let img_url = `https://github.com/${i}.png`;
-              let ghb_url = `https://github.com/${i}`;
+              const img_url = `https://github.com/${i}.png`;
+              const ghb_url = `https://github.com/${i}`;
               return (
                 <a className="gh_profile_container_a" href={ghb_url}>
                   <img

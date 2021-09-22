@@ -31,8 +31,8 @@ function Compare(props) {
     tmpDate = year + "-" + (month - 1) + "-" + date;
     minDate = year - 1 + "-" + month + "-" + date;
   }
-  let [fDate, onFullDateChange] = useState(fullDate);
-  let [tDate, onTmpDateChange] = useState(tmpDate);
+  const [fDate, onFullDateChange] = useState(fullDate);
+  const [tDate, onTmpDateChange] = useState(tmpDate);
 
   const switchFullDateHandler = (newDate) => {
     onFullDateChange(newDate);
@@ -46,17 +46,17 @@ function Compare(props) {
     frData는 내 친구 커밋 데이터
     days는 비교 날짜 일수
     */
-  let [myData, onMyDataChange] = useState({
+  const [myData, onMyDataChange] = useState({
     data: [{ x: "", y: 0 }],
     total: 0,
   });
 
-  let [frData, onFrDataChange] = useState({
+  const [frData, onFrDataChange] = useState({
     data: [{ x: "", y: 0 }],
     total: 0,
   });
 
-  let [compareDays, onCompareDaysChange] = useState({
+  const [compareDays, onCompareDaysChange] = useState({
     days: [{ me: 0, y: 0, total: 0 }],
   });
 
