@@ -1,11 +1,11 @@
-import Footer from "./component/footer";
+import Footer from "./components/footer";
 import Home from "./Home";
 import Compare from "./Compare";
 import Commit from "./Commit";
-import Background from "./component/background";
-import backgroundSvgDay from "./vectors/Flat-Mountains-Day.svg";
-import backgroundSvgNight from "./vectors/Flat-Mountains-Night.svg";
-import SwitchExample from "./component/modeSwitch";
+import Background from "./components/background";
+import backgroundSvgDay from "./assets/Flat-Mountains-Day.svg";
+import backgroundSvgNight from "./assets/Flat-Mountains-Night.svg";
+import SwitchExample from "./components/modeSwitch";
 import "./App.css";
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";

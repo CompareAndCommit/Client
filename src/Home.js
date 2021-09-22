@@ -1,8 +1,8 @@
-import logoSimpleDay from "./vectors/logoSimple-Day.svg";
-import logoSimpleNight from "./vectors/logoSimple-Night.svg";
+import logoSimpleDay from "./assets/logoSimple-Day.svg";
+import logoSimpleNight from "./assets/logoSimple-Night.svg";
 import React, { Component } from "react";
 import Fade from "@material-ui/core/Fade";
-import { myToast } from "./component/swal-toast";
+import { myToast } from "./components/swal-toast";
 import "./Home.css";
 
 class Home extends Component {
@@ -58,16 +58,12 @@ class Home extends Component {
                 value="Let's Go!"
                 id="submitBtn"
                 onClick={(e) => {
-                  console.log("letsgo clicked");
                   if (this.props.myName === this.props.friendName) {
                     myToast("warning", "Type different user");
                   } else if (
                     this.props.myName !== "" &&
                     this.props.friendName !== ""
                   ) {
-                    console.log(
-                      `Let's compare ${this.props.myName} and ${this.props.friendName}`
-                    );
                     this.props.setHome(false);
                     this.props.setCompare(true);
                     window.scrollTo(0, 0);

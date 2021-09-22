@@ -11,12 +11,12 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
 function Commit(props) {
-  let [langDatas, onLangDataChange] = useState({
+  const [langDatas, onLangDataChange] = useState({
     colors: [],
     langs: [],
   });
 
-  let [renderCompareReady, onRenderCompareReadyChange] = useState(false);
+  const [renderCompareReady, onRenderCompareReadyChange] = useState(false);
 
   const switchRenderReadyHandler = (data) => {
     onRenderCompareReadyChange(data);
@@ -29,12 +29,11 @@ function Commit(props) {
   const langList = [];
 
   for (let i = 0; i < langDatas.langs.length; i++) {
-    let color = langDatas.colors[i];
     langList.push(
       <li key={i}>
         <div
           className="chart-lang-box"
-          style={{ backgroundColor: color }}
+          style={{ backgroundColor: langDatas.colors[i] }}
         ></div>
         <div className="chart-lang-str">{langDatas.langs[i].x}</div>
       </li>
@@ -58,11 +57,9 @@ function Commit(props) {
             const langPercent = response.data.top_five_pct;
             const langColors = [];
 
-            console.log("Top 5 Lang >>", topFiveLang);
-
             for (var i = 0; i < topFiveLang.length; i++) {
               for (var j = 0; j < githubData.length; j++) {
-                if (topFiveLang[i] == githubData[j].name) {
+                if (topFiveLang[i] === githubData[j].name) {
                   langColors.push(githubData[j].color);
                 }
               }
@@ -79,15 +76,14 @@ function Commit(props) {
               ],
             };
 
-            var langList = [];
+            const langList = [];
 
             for (let i = 0; i < langData.langs.length; i++) {
-              let color = langData.colors[i];
               langList.push(
                 <li key={i}>
                   <div
                     className="chart-lang-box"
-                    style={{ backgroundColor: color }}
+                    style={{ backgroundColor: langData.colors[i] }}
                   ></div>
                   <div className="chart-lang-str">{langData.langs[i].x}</div>
                 </li>
@@ -151,7 +147,11 @@ function Commit(props) {
               let ghb_url = `https://github.com/${i}`;
               return (
                 <a className="gh_profile_container_a" href={ghb_url}>
-                  <img className="gh_profile_img_rounded" src={img_url} />
+                  <img
+                    className="gh_profile_img_rounded"
+                    src={img_url}
+                    alt="github_profile_img"
+                  />
                   <h3 className="gh_profile_h3_username">{i}</h3>
                 </a>
               );
@@ -166,7 +166,7 @@ function Commit(props) {
             <tr>
               {modalContent.repositories.repo ? (
                 modalContent.repositories.repo.map((i) => {
-                  let repo_name = i.replace("https://github.com/", "");
+                  const repo_name = i.replace("https://github.com/", "");
                   return (
                     <td>
                       <a className="gh_repo_name_a" href={i}>

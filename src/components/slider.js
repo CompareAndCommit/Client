@@ -56,7 +56,6 @@ export default class SimpleSlider extends Component {
     return fetch(`/compare-languages?MyName=${myName}&OtherName=${friendName}`)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         return json;
       })
       .catch((err) => {
@@ -79,15 +78,11 @@ export default class SimpleSlider extends Component {
     const githubData = data.data;
     const excludeData = data.exclude_data;
 
-    console.log(lang_datas);
     for (var i = 0; i < lang_datas.length; i++) {
-      console.log(lang_datas[i]);
       const targetGithubData = githubData.filter(
-        (obj) => obj["name"] == lang_datas[i]
+        (obj) => obj["name"] === lang_datas[i]
       );
-      console.log(targetGithubData);
       if (!targetGithubData.length || excludeData.includes(lang_datas[i])) {
-        console.log(`we should exclude ${lang_datas[i]}`);
         lang_datas.splice(i, 1);
         devl_id_datas.splice(i, 1);
         devl_desc_datas.splice(i, 1);
@@ -98,14 +93,6 @@ export default class SimpleSlider extends Component {
         lang_datas[i] = [lang_datas[i], targetGithubData[0].src];
       }
     }
-    console.log(datas);
-    console.log(
-      lang_datas,
-      devl_desc_datas,
-      devl_id_datas,
-      repo_datas,
-      repo_desc_datas
-    );
 
     for (var k = 0; k < lang_datas.length; k++) {
       lang_datas[k].push({
@@ -117,7 +104,6 @@ export default class SimpleSlider extends Component {
 
     this.setState(lang_datas);
     this.props.compareReady(true);
-    console.log(this.state);
   }
 
   componentDidMount() {

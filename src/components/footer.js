@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import logoTransparentDay from "../vectors/logoTransparent-Day.svg";
-import logoTransparentNight from "../vectors/logoTransparent-Night.svg";
+import logoTransparentDay from "../assets/logoTransparent-Day.svg";
+import logoTransparentNight from "../assets/logoTransparent-Night.svg";
 import "./footer.css";
 
 class Footer extends Component {

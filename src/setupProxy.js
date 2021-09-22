@@ -24,6 +24,4 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
-
-  console.log("proxy created");
 };

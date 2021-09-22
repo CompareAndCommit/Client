@@ -31,7 +31,6 @@ function Compare(props) {
     tmpDate = year + "-" + (month - 1) + "-" + date;
     minDate = year - 1 + "-" + month + "-" + date;
   }
-  console.log(fullDate, tmpDate);
   let [fDate, onFullDateChange] = useState(fullDate);
   let [tDate, onTmpDateChange] = useState(tmpDate);
 
@@ -277,7 +276,6 @@ function Compare(props) {
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
               onClick={() => {
-                console.log("back to home");
                 props.setHome(true);
                 props.setCompare(false);
                 window.scrollTo(0, 0);
@@ -312,7 +310,6 @@ function Compare(props) {
               xmlns="http://www.w3.org/2000/svg"
               xmlnXlink="http://www.w3.org/1999/xlink"
               onClick={() => {
-                console.log("go to commit");
                 props.setCompare(false);
                 props.setCommit(true);
                 window.scrollTo(0, 0);
