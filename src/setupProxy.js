@@ -1,26 +1,26 @@
-const createProxyMiddleware = require("http-proxy-middleware");
+const createProxyMiddleware = require('http-proxy-middleware');
 
 module.exports = function (app) {
   app.use(
-    "/compare-commits",
+    '/api/compare-commits',
     createProxyMiddleware({
-      target: "http://3.36.70.50",
+      target: 'http://localhost:5000',
       changeOrigin: true,
     })
   );
 
   app.use(
-    "/compare-languages",
+    '/api/compare-languages',
     createProxyMiddleware({
-      target: "http://3.36.70.50",
+      target: 'http://localhost:5000',
       changeOrigin: true,
     })
   );
 
   app.use(
-    "/top-five-languages",
+    '/api/top-five-languages',
     createProxyMiddleware({
-      target: "http://3.36.70.50",
+      target: 'http://localhost:5000',
       changeOrigin: true,
     })
   );
