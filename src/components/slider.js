@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { myToast } from "./swal-toast.js";
-import data from "../data.json";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { myToast } from './swal-toast.js';
+import data from '../data.json';
 
 function SimpleSliderElement(props) {
   return (
-    <div className="carousel-element" onClick={props.onModalOpen}>
-      <img className="carousel-img" src={props.src} alt={props.name} />
-      <div className="carousel-div">{props.name}</div>
+    <div className='carousel-element' onClick={props.onModalOpen}>
+      <img className='carousel-img' src={props.src} alt={props.name} />
+      <div className='carousel-div'>{props.name}</div>
     </div>
   );
 }
@@ -21,9 +21,9 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        background: "grey",
-        borderRadius: "50%",
+        display: 'block',
+        background: 'grey',
+        borderRadius: '50%',
       }}
       onClick={onClick}
     />
@@ -37,9 +37,9 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        background: "grey",
-        borderRadius: "50%",
+        display: 'block',
+        background: 'grey',
+        borderRadius: '50%',
       }}
       onClick={onClick}
     />
@@ -52,14 +52,16 @@ export default class SimpleSlider extends Component {
   async callAPI() {
     const { myName, friendName } = this.props;
 
-    return fetch(`/compare-languages?MyName=${myName}&OtherName=${friendName}`)
+    return fetch(
+      `/api/compare-languages?MyName=${myName}&OtherName=${friendName}`
+    )
       .then((response) => response.json())
       .then((json) => {
         return json;
       })
       .catch((err) => {
         console.log(err);
-        myToast("warning", "Cannot Get Data");
+        myToast('warning', 'Cannot Get Data');
         setTimeout(() => {
           this.props.setCommit(false);
           this.props.setCompare(true);
@@ -80,7 +82,7 @@ export default class SimpleSlider extends Component {
 
     for (let i = 0; i < languageDataArray.length; i++) {
       const targetGithubDataJson = githubDataArray.filter(
-        (obj) => obj["name"] === languageDataArray[i]
+        (obj) => obj['name'] === languageDataArray[i]
       );
       if (
         !targetGithubDataJson.length ||
@@ -151,7 +153,7 @@ export default class SimpleSlider extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {elements ? this.renderLanguages() : "loading"}
+          {elements ? this.renderLanguages() : 'loading'}
         </Slider>
       </div>
     );

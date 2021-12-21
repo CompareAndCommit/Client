@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { VictoryPie } from "victory";
-import SimpleSlider from "./components/slider";
-import MyLoader from "./components/loader";
-import "./Commit.css";
-import "./Compare.css";
-import axios from "axios";
-import { myToast } from "./components/swal-toast";
-import data from "./data.json";
-import "react-responsive-modal/styles.css";
-import { Modal } from "react-responsive-modal";
+import React, { useEffect, useState } from 'react';
+import { VictoryPie } from 'victory';
+import SimpleSlider from './components/slider';
+import MyLoader from './components/loader';
+import './Commit.css';
+import './Compare.css';
+import axios from 'axios';
+import { myToast } from './components/swal-toast';
+import data from './data.json';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 function Commit(props) {
   const [langDatas, onLangDataChange] = useState({
@@ -32,10 +32,10 @@ function Commit(props) {
     langList.push(
       <li key={i}>
         <div
-          className="chart-lang-box"
+          className='chart-lang-box'
           style={{ backgroundColor: langDatas.colors[i] }}
         ></div>
-        <div className="chart-lang-str">{langDatas.langs[i].x}</div>
+        <div className='chart-lang-str'>{langDatas.langs[i].x}</div>
       </li>
     );
   }
@@ -44,10 +44,10 @@ function Commit(props) {
     async function getTopFiveLangData() {
       const githubData = data.data;
 
-      axios.get(`/top-five-languages?MyName=${props.myName}`).then(
+      axios.get(`/api/top-five-languages?MyName=${props.myName}`).then(
         (response) => {
           if (response.data.code === 400) {
-            myToast("warning", "Cannot Get Data");
+            myToast('warning', 'Cannot Get Data');
             setTimeout(() => {
               props.setCommit(false);
               props.setCompare(true);
@@ -82,10 +82,10 @@ function Commit(props) {
               langList.push(
                 <li key={i}>
                   <div
-                    className="chart-lang-box"
+                    className='chart-lang-box'
                     style={{ backgroundColor: langData.colors[i] }}
                   ></div>
-                  <div className="chart-lang-str">{langData.langs[i].x}</div>
+                  <div className='chart-lang-str'>{langData.langs[i].x}</div>
                 </li>
               );
             }
@@ -132,26 +132,26 @@ function Commit(props) {
   return (
     <main>
       {/*<Slide direction="right" in={props.viewCommit}>*/}
-      <Modal id="full_modal" open={open} onClose={onCloseModal} center>
-        <h2 id="modal_language_title">{modalContent.language}</h2>
-        <div className="subtitle">
-          {" "}
+      <Modal id='full_modal' open={open} onClose={onCloseModal} center>
+        <h2 id='modal_language_title'>{modalContent.language}</h2>
+        <div className='subtitle'>
+          {' '}
           Click and take a look at developers and respositories!
         </div>
-        <div className="modal_section_title">Visit Popular Developers</div>
-        <div className="modal_profiles">
+        <div className='modal_section_title'>Visit Popular Developers</div>
+        <div className='modal_profiles'>
           {modalContent.developers.id ? (
             modalContent.developers.id.map((i) => {
               const img_url = `https://github.com/${i}.png`;
               const ghb_url = `https://github.com/${i}`;
               return (
-                <a className="gh_profile_container_a" href={ghb_url}>
+                <a className='gh_profile_container_a' href={ghb_url}>
                   <img
-                    className="gh_profile_img_rounded"
+                    className='gh_profile_img_rounded'
                     src={img_url}
-                    alt="github_profile_img"
+                    alt='github_profile_img'
                   />
-                  <h3 className="gh_profile_h3_username">{i}</h3>
+                  <h3 className='gh_profile_h3_username'>{i}</h3>
                 </a>
               );
             })
@@ -159,16 +159,16 @@ function Commit(props) {
             <div></div>
           )}
         </div>
-        <div className="modal_section_title">Visit Popular Repositories</div>
+        <div className='modal_section_title'>Visit Popular Repositories</div>
         <table>
           <tbody>
             <tr>
               {modalContent.repositories.repo ? (
                 modalContent.repositories.repo.map((i) => {
-                  const repo_name = i.replace("https://github.com/", "");
+                  const repo_name = i.replace('https://github.com/', '');
                   return (
                     <td>
-                      <a className="gh_repo_name_a" href={i}>
+                      <a className='gh_repo_name_a' href={i}>
                         {repo_name}
                       </a>
                     </td>
@@ -181,7 +181,7 @@ function Commit(props) {
             <tr>
               {modalContent.repositories.desc ? (
                 modalContent.repositories.desc.map((i) => {
-                  return <td className="gh_repo_desc">{i}</td>;
+                  return <td className='gh_repo_desc'>{i}</td>;
                 })
               ) : (
                 <div></div>
@@ -190,33 +190,33 @@ function Commit(props) {
           </tbody>
         </table>
       </Modal>
-      <div id="main-container2">
-        <div className="header2">
-          <div className="title title2">Commit</div>
+      <div id='main-container2'>
+        <div className='header2'>
+          <div className='title title2'>Commit</div>
         </div>
-        <div className="subdiv2">
-          <div className="title-commit-sub">{props.myName}'s Top 5 Commits</div>
-          <div id="chart-container">
-            <div id="chart-pie">
+        <div className='subdiv2'>
+          <div className='title-commit-sub'>{props.myName}'s Top 5 Commits</div>
+          <div id='chart-container'>
+            <div id='chart-pie'>
               <VictoryPie
                 startAngle={-90}
                 endAngle={270}
                 colorScale={langDatas.colors}
                 data={langDatas.langs}
-                labels={({ l }) => ""}
+                labels={({ l }) => ''}
               />
             </div>
-            <div id="chart-pie-description">
+            <div id='chart-pie-description'>
               <ul>{langList}</ul>
             </div>
           </div>
         </div>
-        <div className="subdiv2">
-          <div className="title-commit-sub">
+        <div className='subdiv2'>
+          <div className='title-commit-sub'>
             Languages that {props.friendName} Commit More
           </div>
           {!renderCompareReady ? <MyLoader /> : null}
-          <div className="carousel-container">
+          <div className='carousel-container'>
             <SimpleSlider
               myName={props.myName}
               friendName={props.friendName}
